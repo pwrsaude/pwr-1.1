@@ -54,7 +54,7 @@ table.dataTable thead > tr > td.sorting_desc_disabled:after {
   opacity: 0.125;
   right: 10px;
   line-height: 9px;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 table.dataTable thead > tr > th.sorting:before, table.dataTable thead > tr > th.sorting_asc:before, table.dataTable thead > tr > th.sorting_desc:before, table.dataTable thead > tr > th.sorting_asc_disabled:before, table.dataTable thead > tr > th.sorting_desc_disabled:before,
@@ -64,7 +64,7 @@ table.dataTable thead > tr > td.sorting_desc:before,
 table.dataTable thead > tr > td.sorting_asc_disabled:before,
 table.dataTable thead > tr > td.sorting_desc_disabled:before {
   bottom: 50%;
-  content: "▲";
+  content: "▴";
 }
 
 table.dataTable thead > tr > th.sorting:after, table.dataTable thead > tr > th.sorting_asc:after, table.dataTable thead > tr > th.sorting_desc:after, table.dataTable thead > tr > th.sorting_asc_disabled:after, table.dataTable thead > tr > th.sorting_desc_disabled:after,
@@ -74,7 +74,7 @@ table.dataTable thead > tr > td.sorting_desc:after,
 table.dataTable thead > tr > td.sorting_asc_disabled:after,
 table.dataTable thead > tr > td.sorting_desc_disabled:after {
   top: 50%;
-  content: "▼";
+  content: "▾";
 }
 
 table.dataTable thead > tr > th.sorting_asc:before, table.dataTable thead > tr > th.sorting_desc:after,
@@ -125,51 +125,93 @@ div.dataTables_processing > div:last-child > div {
   height: 13px;
   border-radius: 50%;
   background: rgba(13, 110, 253, 0.9);
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
 div.dataTables_processing > div:last-child > div:nth-child(1) {
   left: 8px;
-  animation: datatables-loader-1 0.6s infinite;
+  -webkit-animation: datatables-loader-1 0.6s infinite;
+          animation: datatables-loader-1 0.6s infinite;
 }
 
 div.dataTables_processing > div:last-child > div:nth-child(2) {
   left: 8px;
-  animation: datatables-loader-2 0.6s infinite;
+  -webkit-animation: datatables-loader-2 0.6s infinite;
+          animation: datatables-loader-2 0.6s infinite;
 }
 
 div.dataTables_processing > div:last-child > div:nth-child(3) {
   left: 32px;
-  animation: datatables-loader-2 0.6s infinite;
+  -webkit-animation: datatables-loader-2 0.6s infinite;
+          animation: datatables-loader-2 0.6s infinite;
 }
 
 div.dataTables_processing > div:last-child > div:nth-child(4) {
   left: 56px;
-  animation: datatables-loader-3 0.6s infinite;
+  -webkit-animation: datatables-loader-3 0.6s infinite;
+          animation: datatables-loader-3 0.6s infinite;
+}
+
+@-webkit-keyframes datatables-loader-1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @keyframes datatables-loader-1 {
   0% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes datatables-loader-3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 @keyframes datatables-loader-3 {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+@-webkit-keyframes datatables-loader-2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
   }
 }
 @keyframes datatables-loader-2 {
   0% {
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
   100% {
-    transform: translate(24px, 0);
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
   }
 }
 table.dataTable.nowrap th, table.dataTable.nowrap td {
@@ -285,7 +327,6 @@ table.dataTable {
 
 table.dataTable td,
 table.dataTable th {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -310,10 +351,6 @@ table.dataTable > tbody > tr {
 table.dataTable > tbody > tr.selected > * {
   box-shadow: inset 0 0 0 9999px rgba(13, 110, 253, 0.9);
   color: white;
-}
-
-table.dataTable > tbody > tr.selected a {
-  color: #090a0b;
 }
 
 table.dataTable.table-striped > tbody > tr.odd > * {
@@ -372,11 +409,8 @@ div.dataTables_wrapper div.dataTables_paginate {
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   margin: 2px 0;
   white-space: nowrap;
-  justify-content: flex-end;
-}
-
-div.dataTables_wrapper div.dt-row {
-  position: relative;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
 }
 
 div.dataTables_scrollHead table.dataTable {
@@ -420,7 +454,8 @@ div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
     text-align: center;
   }
   div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-    justify-content: center !important;
+    -ms-flex-pack: center !important;
+        justify-content: center !important;
   }
 }
 table.dataTable.table-sm > thead > tr > th:not(.sorting_disabled) {
@@ -475,9 +510,12 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
 }
 
 div.dataTables_wrapper .card-header {
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 
 div.dataTables_wrapper div.dataTables_info {
@@ -526,8 +564,10 @@ html:not([dir=rtl]) table.table-bordered.dataTable td:last-child {
   }
 }
 [dir=rtl] div.dataTables_wrapper .dataTables_filter {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
 }
 [dir=rtl] div.dataTables_wrapper .dataTables_filter input {
   margin-left: 0;
@@ -644,7 +684,8 @@ div.card-datatable .dataTable {
     overflow: auto;
   }
   .dataTable_select div.dataTables_wrapper div.dataTables_info {
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -689,7 +730,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-link div:not(
   div.dataTables_wrapper div.dataTables_filter label,
   div.dataTables_wrapper div.dataTables_info,
   div.dataTables_wrapper div.dataTables_paginate {
-    justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
 }
 div.card-datatable {

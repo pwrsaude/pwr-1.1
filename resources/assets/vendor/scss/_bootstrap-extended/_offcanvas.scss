@@ -19,12 +19,16 @@
   .offcanvas-start {
     left: auto;
     right: 0;
-    transform: translateX(100%);
+    &:not(.show) {
+      transform: translateX(100%);
+    }
   }
 
   .offcanvas-end {
     right: auto;
     left: 0;
-    transform: translateX(-100%);
+    &:not(.show) {
+      transform: translateX(-100%);
+    }
   }
 }

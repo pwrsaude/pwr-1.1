@@ -41,7 +41,7 @@ $(function () {
           render: function (data, type, full, meta) {
             var $invoice_id = full['invoice_id'];
             // Creates full output for row
-            var $row_output = '<a href="app-invoice-preview.html">#' + $invoice_id + '</a>';
+            var $row_output = '<a href="' + baseUrl + 'app/invoice/preview">#' + $invoice_id + '</a>';
             return $row_output;
           }
         },
@@ -110,7 +110,9 @@ $(function () {
               '</div>' +
               '</div>' +
               '<div class="d-flex flex-column">' +
-              '<a href="pages-profile-user.html" class="text-body text-truncate fw-semibold">' +
+              '<a href="' +
+              baseUrl +
+              'pages/profile-user" class="text-body text-truncate fw-semibold">' +
               $name +
               '</a>' +
               '<small class="text-truncate text-muted">' +
@@ -172,12 +174,12 @@ $(function () {
             return (
               '<div class="d-flex align-items-center">' +
               '<a href="javascript:;" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Send Mail"><i class="bx bx-send mx-1"></i></a>' +
-              '<a href="app-invoice-preview.html" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Preview Invoice"><i class="bx bx-show mx-1"></i></a>' +
+              '<a href="'+baseUrl +'app/invoice/preview" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Preview Invoice"><i class="bx bx-show mx-1"></i></a>' +
               '<div class="dropdown">' +
               '<a href="javascript:;" class="btn dropdown-toggle hide-arrow text-body p-0" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></a>' +
               '<div class="dropdown-menu dropdown-menu-end">' +
               '<a href="javascript:;" class="dropdown-item">Download</a>' +
-              '<a href="app-invoice-edit.html" class="dropdown-item">Edit</a>' +
+              '<a href="'+baseUrl +'app/invoice/edit" class="dropdown-item">Edit</a>' +
               '<a href="javascript:;" class="dropdown-item">Duplicate</a>' +
               '<div class="dropdown-divider"></div>' +
               '<a href="javascript:;" class="dropdown-item delete-record text-danger">Delete</a>' +
@@ -206,10 +208,10 @@ $(function () {
       // Buttons with Dropdown
       buttons: [
         {
-          text: '<i class="bx bx-plus me-md-1"></i><span class="d-md-inline-block d-none">Create Invoice</span>',
+          text: '<i class="bx bx-plus me-md-2"></i><span class="d-md-inline-block d-none">Create Invoice</span>',
           className: 'btn btn-primary',
           action: function (e, dt, button, config) {
-            window.location = 'app-invoice-add.html';
+            window.location = baseUrl + 'app/invoice/add';
           }
         }
       ],

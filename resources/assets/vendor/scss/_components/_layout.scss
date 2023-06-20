@@ -77,8 +77,6 @@
   // z-index: 9 (layout-horizontal)
   .layout-horizontal &:not(.fade) {
     z-index: 9;
-    // Horizontal fix for search background with opacity
-    top: $navbar-height !important;
   }
   &.fade {
     z-index: -1;
@@ -399,6 +397,48 @@
 
   .menu-vertical {
     height: 100%;
+  }
+}
+
+// * Layout Front
+// *******************************************************************************
+
+.layout-front .app-content {
+  min-height: calc(100vh - 8rem);
+}
+
+// Navbar Front
+
+.navbar-collapse-header {
+  display: none;
+}
+@include media-breakpoint-down(lg) {
+  .navbar-front {
+    .navbar-collapse-header {
+      display: block;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-collapse {
+      position: absolute;
+      z-index: $zindex-modal;
+      top: 0;
+      right: 0;
+      left: 0;
+      overflow-y: auto;
+      width: calc(100% - calc(#{$navbar-padding-y} * 2));
+      height: auto !important;
+      margin: $navbar-padding-y;
+      &.collapsing,
+      &.show {
+        padding: $card-spacer-x;
+        border-radius: $border-radius;
+        background: $white;
+        box-shadow: $box-shadow;
+      }
+    }
   }
 }
 
@@ -1056,9 +1096,7 @@ html:not(.layout-footer-fixed) .content-wrapper {
 }
 
 @include media-breakpoint-up(xl) {
-  .layout-menu-collapsed:not(.layout-transitioning):not(.layout-menu-offcanvas):not(.layout-menu-fixed):not(
-      .layout-menu-fixed-offcanvas
-    )
+  .layout-menu-collapsed:not(.layout-transitioning):not(.layout-menu-offcanvas):not(.layout-menu-fixed):not(.layout-menu-fixed-offcanvas)
     .layout-menu {
     transition-duration: $menu-animation-duration;
     transition-property: margin-left, margin-right, width;

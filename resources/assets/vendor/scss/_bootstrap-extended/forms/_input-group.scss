@@ -3,13 +3,6 @@
 
 // Using :focus-within to apply focus/validation border and shadow to default and merged input-group
 .input-group {
-  // Rounded pill option
-  &.rounded-pill {
-    .input-group-text,
-    .form-control {
-      @include border-radius($border-radius-pill);
-    }
-  }
   &:focus-within {
     box-shadow: $input-focus-box-shadow;
     .form-control,
@@ -96,18 +89,6 @@
   }
 
   .input-group {
-    // Rounded input field
-    &.rounded-pill {
-      .input-group-text {
-        border-top-right-radius: $border-radius-pill !important;
-        border-bottom-right-radius: $border-radius-pill !important;
-      }
-      .form-control {
-        border-top-left-radius: $border-radius-pill !important;
-        border-bottom-left-radius: $border-radius-pill !important;
-      }
-    }
-
     // Input group with dropdown rounded corners, while not validate
     &:not(.has-validation) {
       > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),

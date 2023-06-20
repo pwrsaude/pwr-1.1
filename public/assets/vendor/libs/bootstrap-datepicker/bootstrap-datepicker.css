@@ -52,8 +52,10 @@ html:not([dir=rtl]) .datepicker table thead tr th.prev {
   width: 0.45rem;
   border-radius: 0;
   border-style: solid;
-  transform: rotate(-45deg);
-  transform-origin: left;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 .datepicker .next::after {
   margin-left: -0.225rem;
@@ -64,7 +66,8 @@ html:not([dir=rtl]) .datepicker .next::after {
 }
 [dir=rtl] .datepicker .next::after {
   right: 23%;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   border-width: 2px 0 0 2px;
   margin-left: 0;
 }
@@ -76,7 +79,8 @@ html:not([dir=rtl]) .datepicker .prev::after {
 }
 [dir=rtl] .datepicker .prev::after {
   left: 50%;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   border-width: 0 2px 2px 0;
   margin-left: -0.225rem;
 }
@@ -91,7 +95,10 @@ html:not([dir=rtl]) .datepicker .prev::after {
 }
 
 .datepicker table {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin: 0;
   overflow: hidden;
   border-radius: 0.5rem;

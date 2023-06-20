@@ -71,7 +71,7 @@ $(function () {
       $('#section-block').block({
         message:
           '<div class="sk-wave mx-auto"><div class="sk-rect sk-wave-rect"></div> <div class="sk-rect sk-wave-rect"></div> <div class="sk-rect sk-wave-rect"></div> <div class="sk-rect sk-wave-rect"></div> <div class="sk-rect sk-wave-rect"></div></div>',
-        timeout: 1000,
+        timeout: 100000,
         css: {
           backgroundColor: 'transparent',
           border: '0'

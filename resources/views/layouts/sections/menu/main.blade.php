@@ -98,23 +98,16 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-profile-user.html">
+                        <a class="dropdown-item" href="{{url('painel/perfil-conta')}}">
                             <i class="bx bx-user me-2"></i>
                             <span class="align-middle">Meu Perfil</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-account-settings-account.html">
-                            <i class="bx bx-cog me-2"></i>
-                            <span class="align-middle">Configurações</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="pages-account-settings-billing.html">
+                        <a class="dropdown-item" href="{{url('painel/perfil-assinatura')}}">
                             <span class="d-flex align-items-center align-middle">
                                 <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                <span class="flex-grow-1 align-middle">Compras</span>
-                                <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                                <span class="flex-grow-1 align-middle">Assinatura</span>
                             </span>
                         </a>
                     </li>
@@ -122,13 +115,13 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-help-center-landing.html">
+                        <a class="dropdown-item" href="#">
                             <i class="bx bx-support me-2"></i>
                             <span class="align-middle">Suporte</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-faq.html">
+                        <a class="dropdown-item" href="#">
                             <i class="bx bx-help-circle me-2"></i>
                             <span class="align-middle">FAQ</span>
                         </a>

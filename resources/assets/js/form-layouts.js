@@ -8,8 +8,7 @@
     creditCardMask = document.querySelector('.credit-card-mask'),
     expiryDateMask = document.querySelector('.expiry-date-mask'),
     cvvMask = document.querySelector('.cvv-code-mask'),
-    datepickerList = document.querySelectorAll('.dob-picker'),
-    formCheckInputPayment = document.querySelectorAll('.form-check-input-payment');
+    datepickerList = document.querySelectorAll('.dob-picker');
 
   // Phone Number
   if (phoneMaskList) {
@@ -46,10 +45,9 @@
   }
 
   // CVV
-  if (cvvMask) {
+  if (cvvMask.length) {
     new Cleave(cvvMask, {
-      numeral: true,
-      numeralPositiveOnly: true
+      numeral: true
     });
   }
 
@@ -58,20 +56,6 @@
     datepickerList.forEach(function (datepicker) {
       datepicker.flatpickr({
         monthSelectorType: 'static'
-      });
-    });
-  }
-
-  // Toggle CC Payment Method based on selected option
-  if (formCheckInputPayment) {
-    formCheckInputPayment.forEach(function (paymentInput) {
-      paymentInput.addEventListener('change', function (e) {
-        const paymentInputValue = e.target.value;
-        if (paymentInputValue === 'credit-card') {
-          document.querySelector('#form-credit-card').classList.remove('d-none');
-        } else {
-          document.querySelector('#form-credit-card').classList.add('d-none');
-        }
       });
     });
   }

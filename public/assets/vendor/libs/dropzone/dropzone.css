@@ -110,7 +110,8 @@
 .dz-thumbnail .dz-nopreview {
   top: 50%;
   position: relative;
-  transform: translateY(-50%) scale(1);
+  -webkit-transform: translateY(-50%) scale(1);
+          transform: translateY(-50%) scale(1);
   margin: 0 auto;
   display: block;
 }

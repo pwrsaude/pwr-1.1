@@ -85,11 +85,6 @@
 
     &.disabled,
     &:disabled {
-      color: $disabled-color !important;
-      background-color: $disabled-background !important;
-      // Remove CSS gradients if they're enabled
-      background-image: if($enable-gradients, none !important, null);
-      border-color: $disabled-border !important;
       box-shadow: none !important;
     }
   }
@@ -170,11 +165,7 @@
 
     &.disabled,
     &:disabled {
-      color: $label-color !important;
-      background-color: $label-background !important;
-      // Remove CSS gradients if they're enabled
-      background-image: if($enable-gradients, none !important, null);
-      border-color: transparent !important;
+      box-shadow: none !important;
     }
   }
 
@@ -247,8 +238,6 @@
     &.disabled,
     &:disabled {
       box-shadow: none !important;
-      color: $color !important;
-      background-color: transparent !important;
     }
   }
 

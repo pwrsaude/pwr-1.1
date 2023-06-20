@@ -1,8 +1,6 @@
 // Checkboxes and Radios
 // *******************************************************************************
-.form-check-input{
-  cursor: $form-check-label-cursor;
-}
+
 // RTL Style
 @include rtl-only {
   .form-check {

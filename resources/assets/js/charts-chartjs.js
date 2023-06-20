@@ -5,7 +5,7 @@
 
 (function () {
   // Color Variables
-  const purpleColor = '#836AF9',
+  const purpleColor = '#e11f5c',
     yellowColor = '#ffe800',
     cyanColor = '#28dac6',
     orangeColor = '#FF8132',

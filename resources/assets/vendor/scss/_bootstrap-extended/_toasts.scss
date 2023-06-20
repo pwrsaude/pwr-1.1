@@ -49,9 +49,7 @@
     padding-top: 0;
   }
 }
-.toast-container {
-  --#{$prefix}toast-zindex: 9;
-}
+
 // RTL close btn style
 @include rtl-only {
   .toast-header {

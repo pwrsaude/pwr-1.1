@@ -12,29 +12,3 @@
     }
   }
 }
-
-// App Chat
-@mixin app-chat-theme($color) {
-  .app-chat {
-    .sidebar-body {
-      .chat-contact-list {
-        li {
-          &.active {
-            background-color: $color;
-          }
-        }
-      }
-    }
-    .app-chat-history {
-      .chat-history {
-        .chat-message {
-          &.chat-message-right {
-            .chat-message-text {
-              background-color: $color !important;
-            }
-          }
-        }
-      }
-    }
-  }
-}

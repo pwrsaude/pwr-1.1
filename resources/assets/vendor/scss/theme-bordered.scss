@@ -4,7 +4,7 @@
 @import './_theme/pages';
 @import './_theme/_theme';
 
-$primary-color: #696cff;
+$primary-color: #3f2e86;
 $body-bg: #fff;
 
 body {
@@ -36,9 +36,7 @@ body {
 }
 .layout-navbar-fixed .layout-page:before {
   backdrop-filter: saturate(200%) blur(10px);
-  background: linear-gradient(180deg, rgba($body-bg, 70%) 44%, rgba($body-bg, 43%) 73%, rgba($body-bg, 0%));
-  -webkit-mask: linear-gradient($body-bg, $body-bg 18%, transparent 100%);
-  mask: linear-gradient($body-bg, $body-bg 18%, transparent 100%);
+  background: rgba($body-bg, 0.6);
 }
 
 // Menu
@@ -268,12 +266,6 @@ body {
       }
     }
   }
-}
-
-//Kanban-item
-.kanban-item {
-  box-shadow: none !important;
-  border: $border-width solid $card-border-color;
 }
 
 // default form wizard style

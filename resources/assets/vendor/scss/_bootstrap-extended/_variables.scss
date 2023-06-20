@@ -38,7 +38,7 @@ $grays: (
 // scss-docs-start color-variables
 $blue: #007bff !default;
 $indigo: #6610f2 !default;
-$purple: #696cff !default;
+$purple: #3f2e86 !default;
 $pink: #e83e8c !default;
 $red: #ff3e1d !default;
 $orange: #fd7e14 !default;
@@ -450,7 +450,6 @@ $form-datatables-check-input-size: 18px !default; // (C) For datatables with che
 
 $form-check-input-border: 1px solid $input-border-color !default;
 
-$form-check-label-cursor: pointer !default;
 $form-check-label-disabled-color: $text-muted !default; // (C)R
 
 $form-check-input-checked-color: $component-active-color !default;
@@ -791,7 +790,7 @@ $list-group-bg: transparent !default;
 $list-group-border-color: $border-color !default;
 $list-group-item-padding-y: 0.58rem !default;
 $list-group-item-padding-x: 0.9375rem !default;
-$list-group-item-color-scale: 0% !default;
+$list-group-item-color-scale: 0 !default;
 $list-group-border-radius: $border-radius-lg !default;
 $list-group-item-bg-hover-scale: 5% !default; //  (c)
 

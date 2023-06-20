@@ -3,12 +3,6 @@
 
 .btn {
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  .bx {
-    line-height: 1.15;
-  }
   &.disabled,
   &:disabled {
     cursor: default;

@@ -136,9 +136,12 @@
   --placeholder-color-focus: rgba(0, 0, 0, 0.25);
   --loader-size: .8em;
   --readonly-striped: 1;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border: 1px solid var(--tags-border-color);
   padding: 0;
   line-height: 0;
@@ -148,14 +151,28 @@
   box-sizing: border-box;
   transition: 0.1s;
 }
+@-webkit-keyframes tags--bump {
+  30% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
 @keyframes tags--bump {
   30% {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@-webkit-keyframes rotateLoader {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
   }
 }
 @keyframes rotateLoader {
   to {
-    transform: rotate(1turn);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
   }
 }
 .tagify:hover:not(.tagify--focus):not(.tagify--invalid) {
@@ -163,7 +180,8 @@
 }
 .tagify[disabled] {
   background: var(--tags-disabled-bg);
-  filter: saturate(0);
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
   opacity: 0.5;
   pointer-events: none;
 }
@@ -182,13 +200,23 @@
   padding: var(--tag-pad);
 }
 .tagify[readonly]:not(.tagify--mix):not(.tagify--select) .tagify__tag > div::before, .tagify[disabled]:not(.tagify--mix):not(.tagify--select) .tagify__tag > div::before {
-  animation: readonlyStyles 1s calc(-1s * (var(--readonly-striped) - 1)) paused;
+  -webkit-animation: readonlyStyles 1s calc(-1s * (var(--readonly-striped) - 1)) paused;
+          animation: readonlyStyles 1s calc(-1s * (var(--readonly-striped) - 1)) paused;
+}
+@-webkit-keyframes readonlyStyles {
+  0% {
+    background: linear-gradient(45deg, var(--tag-bg) 25%, transparent 25%, transparent 50%, var(--tag-bg) 50%, var(--tag-bg) 75%, transparent 75%, transparent) 0/5px 5px;
+    box-shadow: none;
+    -webkit-filter: brightness(0.95);
+            filter: brightness(0.95);
+  }
 }
 @keyframes readonlyStyles {
   0% {
     background: linear-gradient(45deg, var(--tag-bg) 25%, transparent 25%, transparent 50%, var(--tag-bg) 50%, var(--tag-bg) 75%, transparent 75%, transparent) 0/5px 5px;
     box-shadow: none;
-    filter: brightness(0.95);
+    -webkit-filter: brightness(0.95);
+            filter: brightness(0.95);
   }
 }
 .tagify[readonly] .tagify__tag__removeBtn, .tagify[disabled] .tagify__tag__removeBtn {
@@ -212,7 +240,8 @@
   border: 3px solid;
   border-color: #EEE #BBB #888 transparent;
   border-radius: 50%;
-  animation: rotateLoader 0.4s infinite linear;
+  -webkit-animation: rotateLoader 0.4s infinite linear;
+          animation: rotateLoader 0.4s infinite linear;
   content: "" !important;
   margin: -2px 0 -2px 0.5em;
 }
@@ -223,11 +252,14 @@
 .tagify + textarea {
   position: absolute !important;
   left: -9999em !important;
-  transform: scale(0) !important;
+  -webkit-transform: scale(0) !important;
+          transform: scale(0) !important;
 }
 .tagify__tag {
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   margin: 5px 0 5px 5px;
   position: relative;
   z-index: 1;
@@ -259,7 +291,10 @@
 }
 .tagify__tag > div > *[contenteditable] {
   outline: none;
-  user-select: text;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
   cursor: text;
   margin: -2px;
   padding: 2px;
@@ -273,7 +308,8 @@
   z-index: -1;
   pointer-events: none;
   transition: 120ms ease;
-  animation: tags--bump 0.3s ease-out 1;
+  -webkit-animation: tags--bump 0.3s ease-out 1;
+          animation: tags--bump 0.3s ease-out 1;
   box-shadow: 0 0 0 var(--tag-inset-shadow-size) var(--tag-bg) inset;
 }
 .tagify__tag:hover:not([readonly]) div::before, .tagify__tag:focus div::before {
@@ -299,11 +335,13 @@
   border: 3px solid;
   border-color: #EEE #BBB #888 transparent;
   border-radius: 50%;
-  animation: rotateLoader 0.4s infinite linear;
+  -webkit-animation: rotateLoader 0.4s infinite linear;
+          animation: rotateLoader 0.4s infinite linear;
   margin: 0 0.5em 0 -0.1em;
 }
 .tagify__tag--flash div::before {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 .tagify__tag--hide {
   width: 0 !important;
@@ -312,7 +350,8 @@
   margin-left: 0;
   margin-right: 0;
   opacity: 0;
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   transition: var(--tag-hide-transition);
   pointer-events: none;
 }
@@ -320,7 +359,8 @@
   white-space: nowrap;
 }
 .tagify__tag.tagify--noAnim > div::before {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 .tagify__tag.tagify--notAllowed:not(.tagify__tag--editable) div > span {
   opacity: 0.5;
@@ -333,13 +373,15 @@
   display: none;
 }
 .tagify__tag[readonly] > div::before {
-  animation: readonlyStyles 1s calc(-1s * (var(--readonly-striped) - 1)) paused;
+  -webkit-animation: readonlyStyles 1s calc(-1s * (var(--readonly-striped) - 1)) paused;
+          animation: readonlyStyles 1s calc(-1s * (var(--readonly-striped) - 1)) paused;
 }
 @keyframes readonlyStyles {
   0% {
     background: linear-gradient(45deg, var(--tag-bg) 25%, transparent 25%, transparent 50%, var(--tag-bg) 50%, var(--tag-bg) 75%, transparent 75%, transparent) 0/5px 5px;
     box-shadow: none;
-    filter: brightness(0.95);
+    -webkit-filter: brightness(0.95);
+            filter: brightness(0.95);
   }
 }
 .tagify__tag--editable > div {
@@ -353,16 +395,21 @@
 }
 .tagify__tag--editable > .tagify__tag__removeBtn::after {
   opacity: 0;
-  transform: translateX(100%) translateX(5px);
+  -webkit-transform: translateX(100%) translateX(5px);
+          transform: translateX(100%) translateX(5px);
 }
 .tagify__tag--editable.tagify--invalid > div::before {
   box-shadow: 0 0 0 2px var(--tag-invalid-color) inset !important;
 }
 .tagify__tag__removeBtn {
-  order: 5;
+  -ms-flex-order: 5;
+      order: 5;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   border-radius: 50px;
   cursor: pointer;
   font: 14px/1 Arial;
@@ -398,7 +445,8 @@
   white-space: nowrap;
 }
 .tagify__input {
-  flex-grow: 1;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
   display: inline-block;
   min-width: 110px;
   margin: 5px;
@@ -427,7 +475,8 @@
 .tagify__input:focus::before {
   transition: 0.2s ease-out;
   opacity: 0;
-  transform: translatex(6px);
+  -webkit-transform: translatex(6px);
+          transform: translatex(6px);
   /* ALL MS BROWSERS: hide placeholder (on focus) otherwise the caret is placed after it, which is weird */
   /* IE Edge 12+ CSS styles go here */
 }
@@ -439,7 +488,8 @@
 .tagify__input:focus:empty::before {
   transition: 0.2s ease-out;
   opacity: 1;
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
   color: rgba(0, 0, 0, 0.25);
   color: var(--placeholder-color-focus);
 }
@@ -507,11 +557,13 @@
   line-height: 8px;
   height: 8px;
   pointer-events: none;
-  transform: translate(-150%, -50%) scaleX(1.2) rotate(90deg);
+  -webkit-transform: translate(-150%, -50%) scaleX(1.2) rotate(90deg);
+          transform: translate(-150%, -50%) scaleX(1.2) rotate(90deg);
   transition: 0.2s ease-in-out;
 }
 .tagify--select[aria-expanded=true]::after {
-  transform: translate(-150%, -50%) rotate(270deg) scaleY(1.2);
+  -webkit-transform: translate(-150%, -50%) rotate(270deg) scaleY(1.2);
+          transform: translate(-150%, -50%) rotate(270deg) scaleY(1.2);
 }
 .tagify--select .tagify__tag {
   position: absolute;
@@ -528,7 +580,8 @@
 .tagify--empty .tagify__input::before {
   transition: 0.2s ease-out;
   opacity: 1;
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
   display: inline-block;
   width: auto;
 }
@@ -545,12 +598,14 @@
 .tagify__dropdown {
   position: absolute;
   z-index: 9999;
-  transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
   overflow: hidden;
 }
 .tagify__dropdown[placement=top] {
   margin-top: 0;
-  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 .tagify__dropdown[placement=top] .tagify__dropdown__wrapper {
   border-top-width: 1.1px;
@@ -591,10 +646,12 @@
 }
 .tagify__dropdown--initial .tagify__dropdown__wrapper {
   max-height: 20px;
-  transform: translateY(-1em);
+  -webkit-transform: translateY(-1em);
+          transform: translateY(-1em);
 }
 .tagify__dropdown--initial[placement=top] .tagify__dropdown__wrapper {
-  transform: translateY(2em);
+  -webkit-transform: translateY(2em);
+          transform: translateY(2em);
 }
 .tagify__dropdown__item {
   box-sizing: border-box;
@@ -613,7 +670,8 @@
   color: white;
 }
 .tagify__dropdown__item:active {
-  filter: brightness(105%);
+  -webkit-filter: brightness(105%);
+          filter: brightness(105%);
 }
 .tagify__dropdown__item--hidden {
   padding-top: 0;
@@ -625,7 +683,8 @@
   transition: var(--tagify-dd-item--hidden-duration, 0.3s) !important;
 }
 .tagify__dropdown__item--hidden > * {
-  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
   opacity: 0;
   transition: inherit;
 }
@@ -662,7 +721,7 @@
   left: 0px;
 }
 .tagify[readonly]:not(.tagify--mix) .tagify__tag > div {
-  padding: 0 0.375rem 0 0.375rem !important;
+  padding: 0 0.375rem 0 0.375rem;
 }
 .tagify__input {
   padding: 0;
@@ -764,12 +823,14 @@
 }
 .tagify-email-list .tagify__tag__removeBtn {
   opacity: 0;
-  transform: translateX(-6px) scale(0.5);
+  -webkit-transform: translateX(-6px) scale(0.5);
+          transform: translateX(-6px) scale(0.5);
   margin-left: -3ch;
   transition: 0.12s;
 }
 .tagify-email-list .tagify__tag:hover .tagify__tag__removeBtn {
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
   opacity: 1;
   margin-left: -1ch;
 }
@@ -789,7 +850,8 @@
   margin-right: -1ch;
 }
 [dir=rtl] .tagify-email-list .tagify__tag__removeBtn {
-  transform: translateX(6px) scale(0.5);
+  -webkit-transform: translateX(6px) scale(0.5);
+          transform: translateX(6px) scale(0.5);
   margin-left: auto;
   margin-right: -3ch;
 }

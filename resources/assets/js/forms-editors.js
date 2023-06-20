@@ -77,7 +77,12 @@
         indent: '+1'
       }
     ],
-    [{ direction: 'rtl' }],
+    [
+      'direction',
+      {
+        align: []
+      }
+    ],
     ['link', 'image', 'video', 'formula'],
     ['clean']
   ];

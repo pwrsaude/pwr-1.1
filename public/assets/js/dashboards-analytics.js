@@ -607,7 +607,7 @@
       colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,
-        colors: [cardColor]
+        colors: cardColor
       },
       dataLabels: {
         enabled: false,

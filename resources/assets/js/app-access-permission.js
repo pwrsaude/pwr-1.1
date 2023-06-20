@@ -7,7 +7,7 @@
 $(function () {
   var dataTablePermissions = $('.datatables-permissions'),
     dt_permission,
-    userList = 'app-user-list.html';
+    userList = baseUrl + 'app/user/list';
 
   // Users List datatable
   if (dataTablePermissions.length) {

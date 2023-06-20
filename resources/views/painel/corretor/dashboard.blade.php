@@ -55,8 +55,8 @@
             <!-- Layout container -->
             <div class="layout-page">
                 <!--  Ini: Navbar -->
+                @include('layouts.sections.menu.main')
                 <!-- End: Navbar -->
-
                 <!-- Conteudo da Página -->
                 <div class="content-wrapper">
                     <!-- Ini: Content -->
@@ -72,7 +72,7 @@
                                                 <p class="mb-4">
                                                     Aqui estão as atualização do sistema
                                                 </p>
-                                                <a href="javascript:;" class="btn btn-sm btn-label-primary">Ver atualizações</a>
+                                                <a href="javascript:;" class="btn btn-sm btn-label-primary">79% DE META ATINGIDA</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-5 text-center text-sm-left">
@@ -88,7 +88,7 @@
                                 <div class="card">
                                     <div class="row row-bordered g-0">
                                         <div class="col-md-8">
-                                            <h5 class="card-header m-0 me-2 pb-3">Receita total</h5>
+                                            <h5 class="card-header m-0 me-2 pb-3">Grafico de Vendas</h5>
                                             <div id="totalRevenueChart" class="px-2"></div>
                                         </div>
                                         <div class="col-md-4">
@@ -107,7 +107,7 @@
                                                 </div>
                                             </div>
                                             <div id="growthChart"></div>
-                                            <div class="text-center fw-semibold pt-3 mb-2">Crescimento da Empresa 12%</div>
+                                            <div class="text-center fw-semibold pt-3 mb-2">Crescimento das Vendas 12%</div>
 
                                             <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
                                                 <div class="d-flex">
@@ -115,7 +115,7 @@
                                                         <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
                                                     </div>
                                                     <div class="d-flex flex-column">
-                                                        <small>2022</small>
+                                                        <small>2023</small>
                                                         <h6 class="mb-0">R$ 32.5k</h6>
                                                     </div>
                                                 </div>
@@ -124,7 +124,7 @@
                                                         <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
                                                     </div>
                                                     <div class="d-flex flex-column">
-                                                        <small>2021</small>
+                                                        <small>2022</small>
                                                         <h6 class="mb-0">R$41.2k</h6>
                                                     </div>
                                                 </div>

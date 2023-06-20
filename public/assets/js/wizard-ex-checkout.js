@@ -51,7 +51,7 @@ $(function () {
   }
 
   // CVV
-  if (cvvMask) {
+  if (cvvMask.length) {
     new Cleave(cvvMask, {
       numeral: true,
       numeralPositiveOnly: true

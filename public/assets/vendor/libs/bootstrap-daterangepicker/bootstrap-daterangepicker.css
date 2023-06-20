@@ -86,21 +86,25 @@ html:not([dir=rtl]) .daterangepicker .calendar-table .next {
 }
 .daterangepicker .calendar-table .prev span {
   margin-right: -0.225rem;
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 [dir=rtl] .daterangepicker .calendar-table .prev span {
   margin-left: -0.225rem;
   margin-right: 0;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 .daterangepicker .calendar-table .next span {
   margin-left: -0.225rem;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 [dir=rtl] .daterangepicker .calendar-table .next span {
   margin-left: 0;
   margin-right: -0.225rem;
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 .daterangepicker .calendar-table table {
   border: 0;

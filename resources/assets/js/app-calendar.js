@@ -250,10 +250,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Init FullCalendar
     // ------------------------------------------------
+    let { dayGrid, interaction, timeGrid, list } = calendarPlugins;
     let calendar = new Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       events: fetchEvents,
-      plugins: [dayGridPlugin, interactionPlugin, listPlugin, timegridPlugin],
+      plugins: [interaction, dayGrid, timeGrid, list],
       editable: true,
       dragScroll: true,
       dayMaxEvents: 2,

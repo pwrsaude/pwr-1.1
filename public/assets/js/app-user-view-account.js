@@ -209,7 +209,7 @@ $(function () {
           render: function (data, type, full, meta) {
             var $invoice_id = full['invoice_id'];
             // Creates full output for row
-            var $row_output = '<a href="app-invoice-preview.html">#' + $invoice_id + '</a>';
+            var $row_output = '<a href="' + baseUrl + 'app/invoice/preview">#' + $invoice_id + '</a>';
             return $row_output;
           }
         },
@@ -262,7 +262,7 @@ $(function () {
             return (
               '<div class="d-flex align-items-center">' +
               '<a href="javascript:;" class="text-body" data-bs-toggle="tooltip" title="Send Mail"><i class="bx bx-paper-plane mx-1"></i></a>' +
-              '<a href="app-invoice-preview.html" class="text-body" data-bs-toggle="tooltip" title="Preview"><i class="bx bx-show-alt mx-1"></i></a>' +
+              '<a href="'+baseUrl +'app/invoice/preview" class="text-body" data-bs-toggle="tooltip" title="Preview"><i class="bx bx-show-alt mx-1"></i></a>' +
               '<a href="javascript:;" class="text-body" data-bs-toggle="tooltip" title="Download"><i class="bx bx-download mx-1"></i></a>' +
               '</div>'
             );
@@ -305,7 +305,7 @@ $(function () {
             },
             {
               extend: 'excel',
-              text: '<i class="bx bxs-file-export me-2"></i>Excel',
+              text: 'Excel',
               className: 'dropdown-item',
               exportOptions: { columns: [1, 2, 3, 4] }
             },

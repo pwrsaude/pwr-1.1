@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@-webkit-keyframes bs-notify-fadeOut {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes bs-notify-fadeOut {
   0% {
     opacity: 0.9;
@@ -22,9 +30,12 @@ select.selectpicker {
   width: 100%;
   text-align: right;
   white-space: nowrap;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 .bootstrap-select > .dropdown-toggle:after {
   margin-top: -1px;
@@ -150,7 +161,8 @@ select.selectpicker {
   width: 100%;
   text-align: left;
   overflow: hidden;
-  flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
 }
 .bs3.bootstrap-select .dropdown-toggle .filter-option {
   padding-right: inherit;
@@ -213,8 +225,6 @@ select.selectpicker {
 }
 .bootstrap-select .dropdown-menu {
   min-width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .bootstrap-select .dropdown-menu > .inner:focus {
@@ -240,7 +250,10 @@ select.selectpicker {
 }
 .bootstrap-select .dropdown-menu li a {
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .bootstrap-select .dropdown-menu li a.opt {
   position: relative;
@@ -264,16 +277,14 @@ select.selectpicker {
   padding: 3px 5px;
   background: rgb(245, 245, 245);
   border: 1px solid rgb(227, 227, 227);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   pointer-events: none;
   opacity: 0.9;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .bootstrap-select .dropdown-menu .notify.fadeOut {
-  animation: 300ms linear 750ms forwards bs-notify-fadeOut;
+  -webkit-animation: 300ms linear 750ms forwards bs-notify-fadeOut;
+          animation: 300ms linear 750ms forwards bs-notify-fadeOut;
 }
 .bootstrap-select .no-results {
   padding: 3px;
@@ -314,8 +325,10 @@ select.selectpicker {
   height: 1em;
   border-style: solid;
   border-width: 0 0.26em 0.26em 0;
-  transform-style: preserve-3d;
-  transform: rotate(45deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle, .bootstrap-select.show-menu-arrow.show > .dropdown-toggle {
@@ -373,8 +386,6 @@ select.selectpicker {
 
 .bs-actionsbox {
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .bs-actionsbox .btn-group {
@@ -387,8 +398,6 @@ select.selectpicker {
 .bs-donebutton {
   float: left;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .bs-donebutton .btn-group {
@@ -413,7 +422,8 @@ select.selectpicker {
 }
 
 .bootstrap-select .dropdown-toggle:after {
-  transform: rotate(45deg) translateY(-50%);
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
   position: absolute;
   right: 13px;
   top: 50%;
@@ -422,23 +432,14 @@ select.selectpicker {
   left: 13px;
   right: auto;
 }
-.bootstrap-select .dropdown-menu .popover-header {
-  display: flex;
-  align-items: center;
-}
-.bootstrap-select .dropdown-menu .popover-header button {
-  border: none;
-  font-size: 1.375rem;
-  background: transparent;
-  padding-bottom: 0.125rem;
-}
 
 .bootstrap-select .dropdown-header .text {
   text-transform: uppercase;
 }
 
 .bootstrap-select.dropup .dropdown-toggle:after {
-  transform: rotate(-45deg) translateY(-50%);
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+          transform: rotate(-45deg) translateY(-50%);
 }
 
 .bootstrap-select.show-tick .dropdown-menu li a {
@@ -453,7 +454,8 @@ select.selectpicker {
   right: 1rem;
   top: 50%;
   margin: 0;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   line-height: 1;
 }
 [dir=rtl] .bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
@@ -521,9 +523,6 @@ html[class] .bootstrap-select.form-select {
   background: #fff;
   border: 1px solid var(--bs-border-color-translucent);
 }
-.light-style .bootstrap-select .dropdown-menu .popover-header button {
-  color: #697a8d;
-}
 .light-style .bootstrap-select .dropdown-menu .bs-actionsbox .actions-btn {
   background-color: rgba(133, 146, 163, 0.16);
   color: #8592a3;
@@ -552,9 +551,6 @@ html[class] .bootstrap-select.form-select {
 .dark-style .bootstrap-select .dropdown-menu .notify {
   background: #2b2c40;
   border: 1px solid var(--bs-border-color-translucent);
-}
-.dark-style .bootstrap-select .dropdown-menu .popover-header button {
-  color: #a3a4cc;
 }
 .dark-style .bootstrap-select .dropdown-menu .bs-actionsbox .actions-btn {
   background-color: rgba(133, 146, 163, 0.16);
