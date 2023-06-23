@@ -7,7 +7,7 @@ Todas as mudanças notáveis ​​neste projeto serão documentadas neste arqui
 Aqui escrevemos notas de atualização para o projeto. É um esforço de equipe torná-los tão
 direto possível.
 
-## [0.1] - 2017-03-15
+## [0.1] - 21-06-2023
 
 ### Added
 
