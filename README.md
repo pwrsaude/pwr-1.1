@@ -12,7 +12,7 @@ composer install
 php artisan key:generate
 ```
 
-4. By running the following command, you will be able to get all the dependencies in your **node_modules** folder:
+4. Install dependences **node_modules** folder:
 
 ```bash
 npm install ou yarn
