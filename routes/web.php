@@ -1,9 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Painel\Admin\PainelController;
 
 /** ROTAS APENAS PARA CRIAR O FRONT END */
 
+
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+Route::get('/recuperar', function () {
+    return view('auth.recuperar');
+});
 /**
  * rota checkout
  */
@@ -11,7 +21,7 @@ Route::get('/checkout', function () {
     return view('checkout.home');
 });
 
-Route::prefix('/painel')->group(function () {
+Route::prefix('/painel')->name('painel.')->group(function () {
 
     /**
      * Rotas Usuário/Cliente
@@ -37,14 +47,17 @@ Route::prefix('/painel')->group(function () {
     /**
      * rotas admnistrador
      */
-    Route::prefix('/admin')->group(function () {
+    Route::prefix('/admin')->name('admin.')->group(function () {
 
-        Route::get('/dashboard', function () {
-            return view('painel.administrador.dashboard');
+        Route::get('/dashboard', [PainelController::class, "dashboard"])->name('dashboard');
+
+        Route::get('/gestao-financeira', [PainelController::class, "gestaoFinanceira"])->name('gestao-financeira');
+
+        Route::prefix('/gestao')->name('gestao.')->group(function () {
+            Route::get('/clientes', [PainelController::class, "gestaoClientes"])->name('gestao-clientes');
         });
-        Route::get('/gestao-clientes', function () {
-            return view('painel.administrador.gestao.clientes.index');
-        });
+
+
         Route::get('/gestao-administradores', function () {
             return view('painel.administrador.gestao.administradores.index');
         });
@@ -54,9 +67,8 @@ Route::prefix('/painel')->group(function () {
         Route::get('/gestao-gratuidades', function () {
             return view('painel.administrador.gestao.gratuidades.index');
         });
-        Route::get('/gestao-financeira', function () {
-            return view('painel.administrador.gestao.financeira.index');
-        });
+
+
         Route::get('/exportacoes', function () {
             return view('painel.administrador.exportacoes');
         });

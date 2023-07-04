@@ -69,7 +69,7 @@
                             <div class="col-md-12">
                                 <ul class="nav nav-pills flex-column flex-md-row mb-3">
                                     <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Minha Conta</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{url('pages/account-settings-security')}}"><i class="bx bx-lock-alt me-1"></i> Segurança</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#"><i class="bx bx-lock-alt me-1"></i> Segurança</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{url('painel/perfil-assinatura')}}"><i class="bx bx-detail me-1"></i> Planos e Assinatura</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{url('pages/account-settings-notifications')}}"><i class="bx bx-bell me-1"></i> Notificações</a></li>
                                     <li class="nav-item"><a class="nav-link" href="javascript:void(0);"><i class="bx bx-group me-1"></i> Dependentes & Associados</a></li>
