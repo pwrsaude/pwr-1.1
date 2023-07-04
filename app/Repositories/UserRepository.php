@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Users;
+namespace App\Repositories;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
-class UserController extends Controller
+class UserRepository
 {
 
     private $modelUser;
@@ -32,7 +30,8 @@ class UserController extends Controller
     {
         return strlen($cpfCnpj) > 11 ? str_pad($cpfCnpj, 14, '0', STR_PAD_LEFT) : str_pad($cpfCnpj, 11, '0', STR_PAD_LEFT);
     }
-    public function store($name, $password = null, $cpfCnpj, $nomePerfil = null)
+
+    public function newUser($name, $password = null, $cpfCnpj, $nomePerfil = null)
     {
         $newUser = [
             'pid' => Str::random(8),
@@ -40,5 +39,10 @@ class UserController extends Controller
             'password' => $password == null ? $this->setHashPassword($cpfCnpj) : $this->setHashPassword($password),
             'cpf_cnpj' => $this->setCpf($cpfCnpj)
         ];
+
+        if($this->modelUser->create($newUser))
+        {
+
+        }
     }
 }
