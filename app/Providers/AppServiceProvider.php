@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -25,5 +26,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Share all menuData to all the views
         View::share('menuData', ["menuVertical" => $menuVertical]);
+
+        Schema::defaultStringLength(191);
     }
 }
