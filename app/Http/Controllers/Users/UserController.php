@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Repositories\UserRepository;
+use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -12,10 +14,12 @@ class UserController extends Controller
 {
 
     private $modelUser;
+    private $userRepository;
 
     public function __construct()
     {
         $this->modelUser = $this->getModelUser();
+        $this->userRepository = $this->getUserRepository();
     }
 
     private function getModelUser()
@@ -23,22 +27,34 @@ class UserController extends Controller
         return new User();
     }
 
-    private function setHashPassword($password)
+    private function getUserRepository()
     {
-        return Hash::make($password);
+        return new UserRepository;
     }
 
-    private function setCpf($cpfCnpj)
-    {
-        return strlen($cpfCnpj) > 11 ? str_pad($cpfCnpj, 14, '0', STR_PAD_LEFT) : str_pad($cpfCnpj, 11, '0', STR_PAD_LEFT);
-    }
     public function store($name, $password = null, $cpfCnpj, $nomePerfil = null)
     {
-        $newUser = [
-            'pid' => Str::random(8),
+        try {
+
+            $data = [
             'name' => $name,
             'password' => $password == null ? $this->setHashPassword($cpfCnpj) : $this->setHashPassword($password),
             'cpf_cnpj' => $this->setCpf($cpfCnpj)
-        ];
+            ];
+
+            if (!empty($data))
+            {
+                if ($this->userRepository->newUser($data, $nomePerfil))
+                {
+                }
+            }
+        } catch (\Throwable $th) {
+
+
+            throw new Exception(
+                "Não foi possível criar um usuário: {$th->getMessage()}",
+                500
+            );
+        }
     }
 }
