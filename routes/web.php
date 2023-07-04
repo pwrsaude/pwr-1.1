@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Painel\Admin\PainelController;
 
@@ -9,6 +10,11 @@ use App\Http\Controllers\Painel\Admin\PainelController;
 
 Route::get('/', function () {
     return view('auth.login');
+});
+
+Route::prefix('/')->group(function(){
+    Route::get('/', [AuthController::class, 'pageLogin'])->name('page.login');
+    Route::get('/registrar', [AuthController::class, 'pageRegistrar'])->name('page.registrar');
 });
 
 Route::get('/recuperar', function () {
