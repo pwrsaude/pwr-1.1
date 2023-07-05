@@ -66,4 +66,9 @@ class UserRepository
             return $user;
         }
     }
+
+    public function getUser($data)
+    {
+        return $this->modelUser->query()->where('id', $data['user_id'])->get();
+    }
 }

@@ -58,4 +58,28 @@ class UserController extends Controller
             );
         }
     }
+
+    public function getUser($user_id)
+    {
+        try {
+
+            $data = [
+                'user_id' => $user_id
+            ];
+
+            if(!empty($data))
+            {
+                $user = $this->userRepository->getUser($data);
+
+                return $user;
+            }
+        } catch (\Throwable $th) {
+
+
+            throw new Exception(
+                "Não foi possível encontrar o usuário: {$th->getMessage()}",
+                500
+            );
+        }
+    }
 }
