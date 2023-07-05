@@ -2,7 +2,7 @@
     "menu": [
       {
         "name": "Início",
-        "url": "/painel/admin/dashboard",
+        "url": "/painel/corretor/dashboard",
         "icon": "menu-icon tf-icons bx bx-home-circle",
         "slug": "painel.admin.dashboard"
       },
@@ -27,19 +27,19 @@
             "slug": "painel.admin.gestao.gestao-clientes"
           },
           {
-            "url": "painel/admin/gestao-corretores",
+            "url": "painel/admin/gestao/corretores",
             "name": "Gestão de Corretoes",
-            "slug": "layouts-painel-admin-gestao-corretores"
+            "slug": "painel.admin.gestao.gestao-corretores"
           },
           {
-            "url": "painel/admin/gestao-gratuidades",
+            "url": "painel/admin/gestao/gratuidades",
             "name": "Gestão de Gratuidades",
-            "slug": "layouts-painel-admin-gestao-gratuidades"
+            "slug": "painel.admin.gestao.gestao-gratuidades"
           },
           {
-            "url": "painel/admin/gestao-administradores",
+            "url": "painel/admin/gestao/administradores",
             "name": "Gestão Administradores",
-            "slug": "layouts-painel-admin-gestao-administradores"
+            "slug": "painel.admin.gestao.gestao-admins"
           }
         ]
       },

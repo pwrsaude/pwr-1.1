@@ -21,11 +21,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $menuVertical = file_get_contents(base_path('resources/menu/menuVertical.json'));
-        $menuVertical = json_decode($menuVertical);
+        $menuAdmin = file_get_contents(base_path('resources/menu/menuAdmin.json'));
+        $menuAdmin = json_decode($menuAdmin);
 
-        // Share all menuData to all the views
-        View::share('menuData', ["menuVertical" => $menuVertical]);
+        $menuCorretor = file_get_contents(base_path('resources/menu/menuCorretor.json'));
+        $menuCorretor = json_decode($menuCorretor);
+
+        // Adiciona menu em todas views 
+        View::share('menuData', ["menuVertical" => $menuAdmin, "menuCorretor" => $menuCorretor]);
 
         Schema::defaultStringLength(191);
     }

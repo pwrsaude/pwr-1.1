@@ -6,13 +6,11 @@ use App\Http\Controllers\Painel\Admin\PainelController;
 
 /** ROTAS APENAS PARA CRIAR O FRONT END */
 
-
-
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::prefix('/')->group(function(){
+Route::prefix('/')->group(function () {
     Route::get('/', [AuthController::class, 'pageLogin'])->name('page.login');
     Route::get('/registrar', [AuthController::class, 'pageRegistrar'])->name('page.registrar');
 });
@@ -61,20 +59,10 @@ Route::prefix('/painel')->name('painel.')->group(function () {
 
         Route::prefix('/gestao')->name('gestao.')->group(function () {
             Route::get('/clientes', [PainelController::class, "gestaoClientes"])->name('gestao-clientes');
+            Route::get('/administradores', [PainelController::class, "gestaoAdministradores"])->name('gestao-admins');
+            Route::get('/gratuidades', [PainelController::class, "gestaoGratuidades"])->name('gestao-gratuidades');
+            Route::get('/corretores', [PainelController::class, "gestaoCorretores"])->name('gestao-corretores');
         });
-
-
-        Route::get('/gestao-administradores', function () {
-            return view('painel.administrador.gestao.administradores.index');
-        });
-        Route::get('/gestao-corretores', function () {
-            return view('painel.administrador.gestao.corretores.index');
-        });
-        Route::get('/gestao-gratuidades', function () {
-            return view('painel.administrador.gestao.gratuidades.index');
-        });
-
-
         Route::get('/exportacoes', function () {
             return view('painel.administrador.exportacoes');
         });

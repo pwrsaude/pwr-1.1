@@ -1,0 +1,90 @@
+{
+    "menu": [
+      {
+        "name": "Início",
+        "url": "/painel/admin/dashboard",
+        "icon": "menu-icon tf-icons bx bx-home-circle",
+        "slug": "painel.admin.dashboard"
+      },
+  
+      {
+        "menuHeader": "Meu Painel"
+      },
+      {
+        "name": "Gestão Financeira",
+        "url": "painel/admin/gestao-financeira",
+        "icon": "menu-icon tf-icons bx bx-file",
+        "slug": "painel.admin.gestao-financeira"
+      },
+      {
+        "name": "Gestão de Usuários",
+        "icon": "menu-icon tf-icons bx bxs-group",
+        "slug": "painel.admin.gestao.",
+        "submenu": [
+          {
+            "url": "painel/admin/gestao/clientes",
+            "name": "Gestão de Clientes",
+            "slug": "painel.admin.gestao.gestao-clientes"
+          },
+          {
+            "url": "painel/admin/gestao/corretores",
+            "name": "Gestão de Corretoes",
+            "slug": "painel.admin.gestao.gestao-corretores"
+          },
+          {
+            "url": "painel/admin/gestao/gratuidades",
+            "name": "Gestão de Gratuidades",
+            "slug": "painel.admin.gestao.gestao-gratuidades"
+          },
+          {
+            "url": "painel/admin/gestao/administradores",
+            "name": "Gestão Administradores",
+            "slug": "painel.admin.gestao.gestao-admins"
+          }
+        ]
+      },
+      {
+        "name": "Permissões",
+        "url": "#",
+        "icon": "menu-icon tf-icons bx bx-shield-alt-2",
+        "slug": "layouts-painel-admin-gestao-permissoes"
+      },
+      {
+        "menuHeader": "Sistema"
+      },
+      {
+        "name": "Importações",
+        "icon": "menu-icon tf-icons bx bx-import",
+        "slug": "importacoes",
+        "submenu": [
+          {
+            "url": "#",
+            "name": "Gerenciar Importações",
+            "slug": ""
+          },
+          {
+            "url": "#",
+            "name": "Configurações",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "menuHeader": "Misc"
+      },
+      {
+        "url": "https://web.whatsapp.com/send?phone=5521978825884&text=Ol%C3%A1,%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es%20sobre%20PwrSa%C3%BAde+%20Telemedicina%20por%20Assinatura%20-",
+        "icon": "menu-icon tf-icons bx bx-support",
+        "name": "Suporte",
+        "slug": "support",
+        "target": "_blank"
+      },
+      {
+        "url": "https://pwrsaude.com.br/politica-de-privacidade/",
+        "icon": "menu-icon tf-icons bx bx-file",
+        "name": "Politica de privacidade",
+        "slug": "documentation",
+        "target": "_blank"
+      }
+    ]
+  }

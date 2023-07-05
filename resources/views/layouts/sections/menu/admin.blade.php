@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
 
-    <!-- ! Hide app brand if navbar-full -->
+    <!-- ! remove logo if navbar-full -->
     @if(!isset($navbarFull))
     <div class="app-brand demo">
 
@@ -33,7 +33,7 @@
         </li>
         @foreach ($menuData['menuVertical']->menu as $menu)
 
-        {{-- adding active and open class if child is active --}}
+        {{-- adicionando classe ativa e aberta se a filha estiver ativa --}}
 
         {{-- menu headers --}}
         @if (isset($menu->menuHeader))
@@ -69,10 +69,7 @@
         @endphp
 
         {{-- main menu --}}
-        <!-- 
-      /app/user/list 
-    
-  -->
+
         <li class="menu-item {{$activeClass}}">
             <a href="{{ isset($menu->url) ? url($menu->url) : 'javascript:void(0);' }}" class="{{ isset($menu->submenu) ? 'menu-link menu-toggle' : 'menu-link' }}" @if (isset($menu->target) and !empty($menu->target)) target="_blank" @endif>
                 @isset($menu->icon)
