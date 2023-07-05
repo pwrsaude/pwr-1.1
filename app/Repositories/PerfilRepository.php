@@ -56,7 +56,7 @@ class PerfilRepository
         {
             $user = $this->modelUser->query()->where('pid', $data['pid'])->first();
 
-            $user->Perfis()->attach($this->getPerfilByName($data['perfil_nome'])->id);
+            $user->Perfis()->attach($this->getPerfilByName($data['perfil_nome'])->perfil_id);
         }
     }
 

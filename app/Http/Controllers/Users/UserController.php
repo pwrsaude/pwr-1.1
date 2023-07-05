@@ -39,12 +39,13 @@ class UserController extends Controller
             $data = [
             'name' => $name,
             'password' => $password == null ? $this->setHashPassword($cpfCnpj) : $this->setHashPassword($password),
-            'cpf_cnpj' => $this->setCpf($cpfCnpj)
+            'cpf_cnpj' => $this->setCpf($cpfCnpj),
+            'nome_perfil' => $nomePerfil
             ];
 
             if (!empty($data))
             {
-                if ($this->userRepository->newUser($data, $nomePerfil))
+                if ($this->userRepository->newUser($data))
                 {
                 }
             }
