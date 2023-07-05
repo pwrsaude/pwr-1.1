@@ -24,7 +24,7 @@
                             type="text"
                             class="form-control"
                             id="email"
-                            name="email-username"
+                            name="login"
                             placeholder="Digite seu e-mail ou CPF"
                             autofocus
                             />

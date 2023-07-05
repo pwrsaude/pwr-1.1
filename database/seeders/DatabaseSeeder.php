@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Http\Controllers\Auth\PerfilController;
+use App\Http\Controllers\Users\ContatoController;
+use App\Http\Controllers\Users\UserController;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +22,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $UsuarioController = new UserController;
+        $Contato = new ContatoController;
+        $PerfilController = new PerfilController();
+
+        $PerfilController->criar('Cliente',  'Perfil de Cliente');
+        $PerfilController->criar('Administrador', 'Perfil de Administrador', true);
+        $PerfilController->criar('Corretor', 'Perfil de Corretor');
     }
 }

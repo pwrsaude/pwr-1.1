@@ -21,12 +21,13 @@ class PerfilController extends Controller
         return new PerfilRepository;
     }
 
-    public function criar(string $name, string $description)
+    public function criar(string $name, string $description, $restrict = false)
     {
         try {
             $data = [
                 'name' => $name,
-                'description' => $description
+                'description' => $description,
+                'restrict' => $restrict
             ];
 
             if (!empty($data)) {

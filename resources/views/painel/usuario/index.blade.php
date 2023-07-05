@@ -18,7 +18,10 @@
                 </div>
                 <div class="col-sm-5 text-center text-sm-left">
                     <div class="card-body pb-0 px-0 px-md-4">
-                        <img src="{{asset('assets/img/illustrations/medic.png')}}" height="160" alt="View Badge User" data-app-dark-img="illustrations/medic.png" data-app-light-img="illustrations/medic.png">
+                        <img src="{{asset('assets/img/illustrations/medic.png')}}"
+                        height="160" alt="View Badge User"
+                        data-app-dark-img="illustrations/medic.png"
+                        data-app-light-img="illustrations/medic.png">
                     </div>
                 </div>
             </div>
@@ -206,7 +209,7 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-2">
                                         <span class="badge bg-label-warning p-2 rounded me-2"><i class="bx bx-mobile-alt bx-sm"></i></span>
-                                        <h5 class="fw-semibold mt-3 ms-1">Como tenho aceeso a consultas? </h5>
+                                        <h5 class="fw-semibold mt-3 ms-1">Como tenho acesso a consultas? </h5>
                                     </div>
                                     <ul>
                                         <li class="text-primary py-1">
