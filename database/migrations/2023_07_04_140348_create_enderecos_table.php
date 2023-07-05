@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->enum('situacao', ['ativo', 'inativo'])->default('ativo');
+            $table->enum('status', ['ativo', 'inativo'])->default('ativo');
             $table->string('cep', 8);
             $table->string('logradouro');
             $table->integer('numero');
