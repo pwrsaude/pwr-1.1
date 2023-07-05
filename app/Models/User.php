@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Permissao;
+use App\Models\Contato;
+use App\Models\Endereco;
 
 class User extends Authenticatable
 {
@@ -48,6 +50,16 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function Contato()
+    {
+        return $this->hasOne(Contato::class, 'user_id');
+    }
+
+    public function Enderecos()
+    {
+        return $this->hasMany(Endereco::class, 'user_id');
+    }
+
     public function Permissoes()
     {
         return $this->belongsToMany(Permissao::class, 'user_permissoes',
@@ -56,5 +68,15 @@ class User extends Authenticatable
         )
         ->as('user_permissoes')
         ->withTimestamps();
+    }
+
+    public function Perfis()
+    {
+        return $this->belongsToMany(Perfil::class, 'user_perfis',
+            'user_id', 'perfil_id',
+            'user_id', 'perfil_id'
+            )
+            ->as('user_perfis')
+            ->withTimestamps();
     }
 }

@@ -29,6 +29,14 @@ class Perfil extends Model
         ->as('perfil_permissoes')
         ->withTimestamps();
     }
+
+    public function User()
+    {
+        return $this->belongsToMany(User::class, 'user_perfis',
+        'perfil_id', 'user_id',
+        'perfil_id', 'user_id')
+        ->as('user_perfis')->withTimestamps();
+    }
 }
 
 
