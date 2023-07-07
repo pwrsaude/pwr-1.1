@@ -62,10 +62,22 @@ Route::prefix('/painel')->name('painel.')->group(function () {
             Route::get('/administradores', [PainelController::class, "gestaoAdministradores"])->name('gestao-admins');
             Route::get('/gratuidades', [PainelController::class, "gestaoGratuidades"])->name('gestao-gratuidades');
             Route::get('/corretores', [PainelController::class, "gestaoCorretores"])->name('gestao-corretores');
+
+            // - 
+            Route::get('/gratuidade/cadastrar', function () {
+                return view('painel.administrador.gestao.gratuidades.cadastrar');
+            });
+            Route::get('/corretor/cadastrar', function () {
+                return view('painel.administrador.gestao.corretores.cadastrar');
+            });
+            Route::get('/administrador/cadastrar', function () {
+                return view('painel.administrador.gestao.administradores.cadastrar');
+            });
         });
         Route::get('/exportacoes', function () {
             return view('painel.administrador.exportacoes');
         });
+        Route::get('/gestao-produtos', [PainelController::class, "gestaoProdutos"])->name('gestao-produtos');
     });
     /**
      * rotas corrretor
@@ -79,6 +91,9 @@ Route::prefix('/painel')->name('painel.')->group(function () {
         });
         Route::get('/clientes', function () {
             return view('painel.corretor.gestao.clientes');
+        });
+        Route::get('/virarcliente', function () {
+            return view('painel.corretor.virarcliente');
         });
         Route::get('/configuracoes', function () {
             return view('painel.administrador.gestao.corretores.index');

@@ -9,9 +9,12 @@
     <div class="card">
         <h4 class="card-header">Gestão de Corretores</h4>
         <div class="card-body demo-vertical-spacing demo-only-element">
-            <div class="input-group mb-4" style="width: 410px;">
-                <input type="text" class="form-control" placeholder="Digite um CPF/Carterinha/Nome ou Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+            <div class="d-flex justify-content-between">
+                <div class="input-group mb-4" style="width: 410px;">
+                    <input type="text" class="form-control" placeholder="Digite um CPF/Carterinha/Nome ou Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+                </div>
+                <a href="/painel/admin/gestao/gratuidade/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Novo Corretor</a>
             </div>
             <div class="table-responsive text-nowrap">
                 <table class="table">

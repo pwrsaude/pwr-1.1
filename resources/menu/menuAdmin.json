@@ -11,6 +11,12 @@
         "menuHeader": "Meu Painel"
       },
       {
+        "name": "Gestão de Produtos",
+        "url": "painel/admin/gestao-financeira",
+        "icon": "menu-icon tf-icons bx bx-cart",
+        "slug": "painel.admin.gestao-produtos"
+      },
+      {
         "name": "Gestão Financeira",
         "url": "painel/admin/gestao-financeira",
         "icon": "menu-icon tf-icons bx bx-file",

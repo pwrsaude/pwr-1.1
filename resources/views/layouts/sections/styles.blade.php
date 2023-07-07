@@ -21,3 +21,7 @@
 <link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/typeahead-js/typeahead.css'))}}" />
 
 <!-- Page CSS -->
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/bs-stepper/bs-stepper.css'))}}" />
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/flatpickr/flatpickr.css'))}}" />
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/select2/select2.css'))}}" />
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/formvalidation/dist/css/formValidation.min.css'))}}" />

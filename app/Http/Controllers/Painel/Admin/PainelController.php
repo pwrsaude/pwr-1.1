@@ -38,6 +38,12 @@ class PainelController extends Controller
         return view('painel.administrador.gestao.financeira.index');
     }
 
+    //Get gestõa produtos
+    public function gestaoProdutos()
+    {
+        return view('painel.administrador.gestao.produtos.index');
+    }
+
     public function registrarCorretorAdmIndexView()
     {
         return view('Usuario.Administrador.Registrar.Corretor.index');
