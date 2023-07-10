@@ -10,6 +10,17 @@ class Permissao extends Model
 {
     use HasFactory;
 
+    protected $table = 'permissoes';
+
+    protected $fillable = [
+        'id',
+        'permissao_pai',
+        'name',
+        'code',
+        'description',
+        'restrict'
+    ];
+
     public function Usuario()
    {
         return $this->belongsToMany(User::class, 'users',

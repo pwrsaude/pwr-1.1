@@ -27,15 +27,17 @@ class PermissaoRepository
     {
         $force = $data['force'];
 
+        $data['code'] = Str::ascii(Str::snake(mb_strtolower($data['name'])));
+
         $data = [
             'permissao_pai' => $data['permissao_pai'],
             'name' => $data['name'],
             'code' => $data['code'],
             'description' => $data['description'],
-            'restrict' => $data['restrict']
+            'restrict' => $data['restrict'],
         ];
 
-        $data['code'] = Str::ascii(Str::snake(mb_strtolower($data['name'])));
+
 
         $permissao = $this->modelPermissao->query()->create($data);
 

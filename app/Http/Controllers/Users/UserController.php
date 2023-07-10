@@ -30,21 +30,23 @@ class UserController extends Controller
         return new UserRepository;
     }
 
-    public function store($name, $password = null, $cpfCnpj, $nomePerfil = null)
+    public function store($name,  $email, $password = null, $cpfCnpj, $nomePerfil = null)
     {
         try {
 
             $data = [
             'name' => $name,
-            'password' => $password == null ? $this->setHashPassword($cpfCnpj) : $this->setHashPassword($password),
-            'cpf_cnpj' => $this->setCpf($cpfCnpj),
-            'nome_perfil' => $nomePerfil
+            'email' => $email,
+            'password' => $password = null ? $cpfCnpj : $password,
+            'cpf_cnpj' => $cpfCnpj,
+            'nome_perfil' => 'Administrador'
             ];
 
             if (!empty($data))
             {
-                if ($this->userRepository->newUser($data))
+                if ($user = $this->userRepository->newUser($data))
                 {
+                    return $user;
                 }
             }
         } catch (\Throwable $th) {

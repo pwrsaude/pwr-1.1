@@ -16,7 +16,26 @@
                     <!-- /Logo -->
                     <h4 class="mb-2">Login</h4>
 
-                    <form id="formAuthentication" class="mb-3" action="/painel/home" method="POST">
+                    <div class="pt-4 pb-2">
+                        <h5 class="card-title text-center pb-0 fs-4">Entrar</h5>
+                        <p class="text-center small">Informe seu e-mail e senha de acesso.</p>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (session('danger'))
+                            <div class="alert alert-danger">
+                                {{ session('danger') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <form id="formAuthentication" class="mb-3" action="{{ route('login.post') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Email ou CPF</label>

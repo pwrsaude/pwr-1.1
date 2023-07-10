@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Permissao;
 use App\Models\Contato;
 use App\Models\Endereco;
+use Illuminate\Support\Facades\Password;
 
 class User extends Authenticatable
 {
@@ -28,6 +29,12 @@ class User extends Authenticatable
         'cpf_cnpj',
         'email',
         'password',
+        'access_level',
+        'stripe_id',
+        'pm_type',
+        'pm_lat_four',
+        'trial_ends_at'
+
     ];
 
     /**
@@ -47,7 +54,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
 
     public function Contato()

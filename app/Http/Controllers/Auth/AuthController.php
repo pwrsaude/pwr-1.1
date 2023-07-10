@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\Models\Contato;
 use App\Models\User;
+use App\Repositories\AuthRepository;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,11 +15,21 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
 
-    private Auth $auth;
-    private Cliente $modelCliente;
-    private User $modelUser;
-    private Contato $modelContato;
-    private Hash $hash;
+    // private Cliente $modelCliente;
+    // private User $modelUser;
+    // private Contato $modelContato;
+    // private Hash $hash;
+    private $authRepository;
+
+    public function __construct()
+    {
+        $this->authRepository = $this->getRepository();
+    }
+
+    private function getRepository()
+    {
+        return new AuthRepository;
+    }
 
 
     public function pageLogin()
@@ -32,63 +44,30 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-
-        $login = $request->input('login');
-        $password = $request->input('password');
-
         try {
 
-            // Procura pelo CPF ou CNPJ
-            $user = $this->modelUser->query()->where('cpf_cnpj', $login)->first();
+            if (isset($request)) {
+                if ($this->authRepository->auth($request)) {
+                    $request->session()->regenerate();
 
-            // Se nao achar, procura pela carteirinha
-            if (is_null($user))
-            {
-
-                $cliente = $this->modelCliente->query()->where('carteirinha', $login)->first();
-
-                if (!is_null($cliente))
-                {
-
-                    $user = $this->modelUser->query()->where('id', $cliente->user_id)->first();
-
-                } else {
-
-                    $contato = $this->modelContato->query()->where('email', $login)->first();
-
-                    if (is_null($contato)) return $this->retornoUsuarioOuSenhaInvalidos();
-
-                    $user = User::query()->where('id', $contato->user_id)->first();
+                    return redirect()->route('painel.admin.dashboard');
                 }
+
+                return redirect()->back()->with('danger', 'Email ou senha inválido!');
             }
+        } catch (Exception $e) {
 
-            // Checa a senha
-            if (!$this->hash->check($password, $user->password))
-            return $this->retornoUsuarioOuSenhaInvalidos();
-
-            // Autoriza usuario
-            $this->auth->login($user, true);
-
-            // Regenera a sessão
-            $request->session()->regenerate();
-
-            return response()->json([
-                'code' => 200,
-                'data' => [
-                    'msg' => 'Login bem sucedido',
-                    'usuario' => $user
-                ]
-            ], 200);
-        } catch (\Throwable $th) {
-            return response()->json([
-                'code' => 500,
-                'erro' => [
-                    'msg' => $th->getMessage(),
-                    'linha' => $th->getLine(),
-                    'arquivo' => $th->getFile(),
-                    'trace' => $th->getTrace()
-                ]
-            ], 500);
+            return $e->getMessage();
         }
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('auth.login');
+    }
+
 }

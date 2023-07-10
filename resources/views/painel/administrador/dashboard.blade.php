@@ -1,4 +1,4 @@
-@extends('layouts/main')
+@extends('layouts.main')
 @section('title', 'PwrSaúde - Dashboard')
 
 @section('content')

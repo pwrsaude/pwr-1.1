@@ -6,12 +6,10 @@ use App\Http\Controllers\Painel\Admin\PainelController;
 
 /** ROTAS APENAS PARA CRIAR O FRONT END */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
 Route::prefix('/')->group(function () {
-    Route::get('/', [AuthController::class, 'pageLogin'])->name('page.login');
+    Route::get('/', [AuthController::class, 'pageLogin'])->name('login.index');
+    Route::post('/', [AuthController::class, 'login'])->name('login.post');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('login.logout');
     Route::get('/registrar', [AuthController::class, 'pageRegistrar'])->name('page.registrar');
 });
 
@@ -25,13 +23,17 @@ Route::get('/checkout', function () {
     return view('checkout.home');
 });
 
+Route::prefix('/cliente')->name('cliente.')->group(function(){
+
+});
+
 Route::prefix('/painel')->name('painel.')->group(function () {
 
     /**
      * Rotas Usuário/Cliente
      */
     Route::get('/home', function () {
-        return view('painel.usuario.index');
+        return view('painel.usuario.index')->name('dash');
     });
     Route::get('/perfil-conta', function () {
         return view('painel.usuario.perfil.conta');
@@ -47,7 +49,7 @@ Route::prefix('/painel')->name('painel.')->group(function () {
     });
     Route::get('/perfil-dependentes', function () {
         return view('painel.usuario.dependentes.show');
-    });
+    })->middleware('auth');
     /**
      * rotas admnistrador
      */
@@ -63,7 +65,7 @@ Route::prefix('/painel')->name('painel.')->group(function () {
             Route::get('/gratuidades', [PainelController::class, "gestaoGratuidades"])->name('gestao-gratuidades');
             Route::get('/corretores', [PainelController::class, "gestaoCorretores"])->name('gestao-corretores');
 
-            // - 
+            // -
             Route::get('/gratuidade/cadastrar', function () {
                 return view('painel.administrador.gestao.gratuidades.cadastrar');
             });

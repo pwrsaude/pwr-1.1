@@ -37,9 +37,9 @@ class UserRepository
         return new User();
     }
 
-    private function setHashPassword($password)
+    private function setBycrypt($password)
     {
-        return Hash::make($password);
+        return bcrypt($password);
     }
 
     private function setCpf($cpfCnpj)
@@ -52,16 +52,18 @@ class UserRepository
         $newUser = [
             'pid' => Str::random(8),
             'name' => $data['name'],
-            'password' => $data['password'] == null ? $this->setHashPassword($data['password']) : $this->setHashPassword($data['password']),
-            'cpf_cnpj' => $this->setCpf($data['cpf_cnpj'])
+            'password' => bcrypt($data['password']),
+            'cpf_cnpj' => $this->setCpf($data['cpf_cnpj']),
+            'email' => $data['email']
+
         ];
 
         if($user = $this->modelUser->create($newUser))
         {
-            if(!is_null($data['nome_perfil']))
-            {
-                $user->Perfis()->attach($this->perfilController->getPerfilByName($data['nome_perfil'])->perfil_id);
-            }
+            // if(!is_null($data['nome_perfil']))
+            // {
+            //     $user->Perfis()->attach($this->perfilController->getPerfilByName($data['nome_perfil'])->perfil_id);
+            // }
 
             return $user;
         }
