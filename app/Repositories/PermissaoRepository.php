@@ -35,6 +35,7 @@ class PermissaoRepository
             'code' => $data['code'],
             'description' => $data['description'],
             'restrict' => $data['restrict'],
+            'access_level' => $data['access_level']
         ];
 
 
@@ -48,6 +49,19 @@ class PermissaoRepository
         }
 
         return $permissao;
+    }
+
+    public function verificarAccessLevel($data)
+    {
+        if($user = $this->userController->getUser($data['user_id']))
+        {
+            $permissoes = $this->modelPermissao->query();
+
+            if($permissoes->where('access_level', $user->access_level))
+            {
+                return $permissoes;
+            }
+        }
     }
 
 }

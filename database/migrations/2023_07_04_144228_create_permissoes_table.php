@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('code');
             $table->string('description')->nullable();
             $table->boolean('restrict')->default(false);
+            $table->integer('access_level')->nullable();
             $table->timestamps();
         });
     }

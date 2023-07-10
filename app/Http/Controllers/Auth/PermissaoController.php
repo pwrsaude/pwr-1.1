@@ -15,7 +15,7 @@ class PermissaoController extends Controller
     {
         $this->permissaoRepository = new PermissaoRepository;
     }
-    public function criar(string $name, string $description, ?int $permissao_pai = null, bool $restrict = false, bool $force = false)
+    public function criar(string $name, string $description, ?int $permissao_pai = null, bool $restrict = false, bool $force = false, int $access_level)
     {
         try {
 
@@ -24,7 +24,8 @@ class PermissaoController extends Controller
                 'description' => $description,
                 'permissao_pai' => $permissao_pai,
                 'restrict' => $restrict,
-                'force' => $force
+                'force' => $force,
+                'access_level' => $access_level
             ];
 
             if (!empty($data))
@@ -39,6 +40,31 @@ class PermissaoController extends Controller
 
             throw new Exception(
                 "Não foi possível criar a permissão: {$th->getMessage()}",
+                500
+            );
+        }
+    }
+
+    public function verificarAccessLevel($user_id)
+    {
+        try {
+
+            $data = [
+                'user_id' => $user_id
+            ];
+
+            if (!empty($data))
+            {
+                if ($permissao = $this->permissaoRepository->criar($data))
+                {
+                    return $permissao;
+                }
+            }
+        } catch (\Throwable $th) {
+
+
+            throw new Exception(
+                "Não foi possível verificar o nível de acesso: {$th->getMessage()}",
                 500
             );
         }

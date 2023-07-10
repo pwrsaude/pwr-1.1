@@ -35,26 +35,26 @@ class DatabaseSeeder extends Seeder
         $PerfilController->criar('Administrador', 'Perfil de Administrador', true);
         $PerfilController->criar('Corretor', 'Perfil de Corretor');
 
-        $permissao_permissoes = $PermissaoController->criar('Permissões', 'Autorização para gerenciar permissões',null,true,true);
-        $PermissaoController->criar('Criar Permisões', 'Criar permissões', $permissao_permissoes->permissao_id, false, true);
-        $PermissaoController->criar('Alterar Permisões', 'Alterar permissões', $permissao_permissoes->permissao_id, false, true);
-        $PermissaoController->criar('Conceder Permisões', 'Conceder permissões', $permissao_permissoes->permissao_id, false, true);
+        $permissao_permissoes = $PermissaoController->criar('Permissões', 'Autorização para gerenciar permissões',null,true,true, 5);
+        $PermissaoController->criar('Criar Permisões', 'Criar permissões', $permissao_permissoes->permissao_id, false, true, 5);
+        $PermissaoController->criar('Alterar Permisões', 'Alterar permissões', $permissao_permissoes->permissao_id, false, true, 5);
+        $PermissaoController->criar('Conceder Permisões', 'Conceder permissões', $permissao_permissoes->permissao_id, false, true, 5);
 
-        $permissao_exportacoes = $PermissaoController->criar('Exportações', 'Criar exportações', null, false, true);
-        $PermissaoController->criar('Fazer Exportações', 'Fazer Exportações', $permissao_exportacoes->permissao_id, false, true);
-        $PermissaoController->criar('Ver Exportações', 'Ver Exportações', $permissao_exportacoes->permissao_id, false, true);
+        $permissao_exportacoes = $PermissaoController->criar('Exportações', 'Criar exportações', null, false, true, 3);
+        $PermissaoController->criar('Fazer Exportações', 'Fazer Exportações', $permissao_exportacoes->permissao_id, false, true, 3);
+        $PermissaoController->criar('Ver Exportações', 'Ver Exportações', $permissao_exportacoes->permissao_id, false, true, 3);
 
-        $permissao_importacoes = $PermissaoController->criar('Importações', 'Criar Importações', null, false, true);
-        $PermissaoController->criar('Fazer Importações', 'Fazer Importações', $permissao_importacoes->permissao_id, false, true);
-        $PermissaoController->criar('Ver Importações', 'Ver Importações', $permissao_importacoes->permissao_id, false, true);
+        $permissao_importacoes = $PermissaoController->criar('Importações', 'Criar Importações', null, false, true, 3);
+        $PermissaoController->criar('Fazer Importações', 'Fazer Importações', $permissao_importacoes->permissao_id, false, true, 3);
+        $PermissaoController->criar('Ver Importações', 'Ver Importações', $permissao_importacoes->permissao_id, false, true, 3);
 
-        $PermissaoController->criar('Gerenciar Administradores', 'Autorização para gerenciar administradores', null, false, true);
-        $PermissaoController->criar('Configurações do sistema', 'Autorização para configurar o sistema', null, true, true);
-        $PermissaoController->criar('Gestão de Dependentes', 'Autorização para gerir dependentes', null, false, true);
-        $PermissaoController->criar('Gestão de Gratuidades', 'Manipular dados de clientes gratuidades no sistema', null, false, true);
-        $PermissaoController->criar('Gestão de Onboarding', 'Manipular dados de clientes onboarding no sistema', null, false, true);
+        $PermissaoController->criar('Gerenciar Administradores', 'Autorização para gerenciar administradores', null, false, true, 5);
+        $PermissaoController->criar('Configurações do sistema', 'Autorização para configurar o sistema', null, true, true, 5);
+        $PermissaoController->criar('Gestão de Dependentes', 'Autorização para gerir dependentes', null, false, true, 3);
+        $PermissaoController->criar('Gestão de Gratuidades', 'Manipular dados de clientes gratuidades no sistema', null, false, true, 4);
+        $PermissaoController->criar('Gestão de Onboarding', 'Manipular dados de clientes onboarding no sistema', null, false, true, 3);
 
-        $PermissaoController->criar('Corretor', 'Permissão de corretor', null, false, true);
-        $PermissaoController->criar('Corretora', 'Permissão para empresa corretora', null, true, true);
+        $PermissaoController->criar('Corretor', 'Permissão de corretor', null, false, true, 3);
+        $PermissaoController->criar('Corretora', 'Permissão para empresa corretora', null, true, true, 3);
     }
 }
