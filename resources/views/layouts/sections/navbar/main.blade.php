@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">John Doe</span>
+                                    <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
                                     <small class="text-muted">Admin</small>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                        <a class="dropdown-item" href="{{ route('login.logout') }}">
                             <i class="bx bx-power-off me-2"></i>
                             <span class="align-middle">Sair</span>
                         </a>

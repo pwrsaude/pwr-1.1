@@ -52,7 +52,7 @@
                             <div class="d-flex justify-content-between">
                                 <label class="form-label" for="password">Senha</label>
                                 <a href="auth-forgot-password-cover.html">
-                                    <small>Esqueceu Sua Senha?</small>
+                                    <small>Esqueceu sua senha?</small>
                                 </a>
                             </div>
                             <div class="input-group input-group-merge">
@@ -70,7 +70,7 @@
                         <div class="mb-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="remember-me" />
-                                <label class="form-check-label" for="remember-me"> Lembrar me </label>
+                                <label class="form-check-label" for="remember-me"> Lembrar-me </label>
                             </div>
                         </div>
                         <button class="btn btn-primary d-grid w-100">Entrar</button>

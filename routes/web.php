@@ -9,7 +9,7 @@ use App\Http\Controllers\Painel\Admin\PainelController;
 Route::prefix('/')->group(function () {
     Route::get('/', [AuthController::class, 'pageLogin'])->name('login.index');
     Route::post('/', [AuthController::class, 'login'])->name('login.post');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('login.logout');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('login.logout');
     Route::get('/registrar', [AuthController::class, 'pageRegistrar'])->name('page.registrar');
 });
 
