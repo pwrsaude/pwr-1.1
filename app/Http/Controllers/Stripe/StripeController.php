@@ -13,12 +13,10 @@ use Stripe\Stripe;
 class StripeController extends Controller
 {
     private $stripeRepository;
-    private $stripe;
 
     public function __construct()
     {
         $this->stripeRepository = new StripeRepository;
-        $this->stripe = $this->getStripe();
     }
 
     public function webhook(Request $request)
@@ -41,11 +39,6 @@ class StripeController extends Controller
             $this->stripeRepository->stripeEvents($event);
             http_response_code(200);
         }
-    }
-
-    private function getStripe()
-    {
-        return new \Stripe\StripeClient(env('STRIPE_SECRET'));
     }
 
     public function index($position)

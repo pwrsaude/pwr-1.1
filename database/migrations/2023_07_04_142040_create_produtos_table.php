@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('stripe_prod');
-            $table->string('stripe_price');
+            $table->string('stripe_price')->nullable();
             $table->unsignedBigInteger('tipo_produto_id');
             $table->timestamps();
 

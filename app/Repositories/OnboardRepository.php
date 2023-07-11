@@ -31,6 +31,11 @@ class OnboardRepository
             $onboards->where('id', $data['id'])->where('cadastro_realizado', false);
         }
 
+        if(isset($data['cpf_cnpj']))
+        {
+            $onboards->where('cpf_cliente', $data['cpf_cnpj'])->where('cadastro_realizado', false);
+        }
+
         if(empty($data))
         {
             $onboards->where('cadastro_realizado', false);
@@ -71,7 +76,7 @@ class OnboardRepository
             ]);
 
             $onboard->update([
-                'stripe_prod' => $data['stripe_price']
+                'stripe_prod' => $data['stripe_prod']
             ]);
         }
     }

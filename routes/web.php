@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Painel\Admin\PainelController;
+use App\Http\Controllers\Users\OnboardController;
 
 /** ROTAS APENAS PARA CRIAR O FRONT END */
 
@@ -19,17 +20,13 @@ Route::get('/recuperar', function () {
 /**
  * rota checkout
  */
-Route::get('/checkout', function () {
-    return view('checkout.home');
+Route::prefix('/onboarding')->group(function(){
+    Route::get('/search', [OnboardController::class, 'pageVerificarCpfOnboard'])->name('onboarding.search.pageVerificarCpfOnboard');
+    Route::post('/search', [OnboardController::class, 'pageFinalizarOnboard'])->name('onboarding.seach.pageFinalizarOnboard');
 });
-
-Route::get('/finalizar-cadastro', function () {
-    return view('checkout.index');
-});
-
-Route::get('/finalizar', function () {
-    return view('checkout.finalizar');
-});
+// Route::get('/finalizar', function () {
+//     return view('checkout.finalizar');
+// });
 
 Route::prefix('/cliente')->name('cliente.')->group(function () {
 });

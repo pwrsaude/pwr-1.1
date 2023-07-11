@@ -85,6 +85,12 @@
                             <span>Crie uma conta</span>
                         </a>
                     </p>
+                    <p class="text-center">
+                        <span>Realizou a inscrição em um plano por assinatura ?</span>
+                        <a href="{{ route('onboarding.search.pageVerificarCpfOnboard') }}">
+                            <span>Finalize seu cadastro</span>
+                        </a>
+                    </p>
                 </div>
             </div>
             <!-- /Login -->

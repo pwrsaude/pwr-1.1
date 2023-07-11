@@ -18,30 +18,6 @@ class AuthRepository
     private Contato $modelContato;
     private Hash $hash;
 
-    // public function auth($data)
-    // {
-    //     $login = $data['login'];
-
-    //     $user = $this->modelUser->query()->where('cpf', $login)->first();
-
-    //     if ($this->verificarNulo($user)) {
-    //         $cliente = $this->modelCliente->query()->where('carteirinha', $login)->first();
-
-    //         if (!$this->verificarNulo($cliente)) {
-    //             $user = $this->modelUser->query()->where('id', $cliente->user_id)->first();
-    //         } else {
-    //             $contato = $this->modelContato->query()->where('email', $login)->first();
-
-    //             if ($this->verificarNulo($contato)) {
-    //                 return $this->retornoUsuarioOuSenhaInvalidos();
-    //             }
-
-    //             $user = $this->modelUser->query()->where('id', $contato->user_id)->first();
-    //         }
-    //     }
-    //     return $user;
-    // }
-
     public function auth(Request $request)
     {
         $request->validate(
@@ -75,15 +51,6 @@ class AuthRepository
         }
 
         return true;
-    }
-
-    public function verificarNulo($search)
-    {
-        if (is_null($search)) {
-            return true;
-        }
-
-        return false;
     }
 
     private function retornoUsuarioOuSenhaInvalidos()

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Produto\ProdutoController;
+use App\Models\Produto;
 use App\Repositories\OnboardRepository;
 use Exception;
 use Illuminate\Http\Request;
@@ -10,15 +12,59 @@ use Illuminate\Http\Request;
 class OnboardController extends Controller
 {
     private $onboardRepository;
+    private $produtoController;
 
     public function __construct()
     {
         $this->onboardRepository = $this->getOnboardRepository();
+        $this->produtoController = new ProdutoController;
+    }
+
+    public function pageVerificarCpfOnboard()
+    {
+        return view('checkout.index');
     }
 
     private function getOnboardRepository()
     {
         return new OnboardRepository;
+    }
+
+    public function criarCliente()
+    {
+
+    }
+
+    public function pageFinalizarOnboard(Request $request)
+    {
+        if($onboard = $this->onboardRepository->getOnboards($data = ['cpf_cnpj' => $request->cpf]))
+        {
+
+            foreach($onboard as $value)
+            {
+                $data = [
+                    'cpf_cliente' => $value->cpf_cliente,
+                    'email' => $value->email,
+                    'quantity' => $value->quantity,
+                    'telefone' => $value->telefone
+                ];
+
+                $produto = $this->produtoController->getProduto($value->stripe_prod, null);
+
+                foreach($produto as $key)
+                {
+                    $produto = [
+                        'name' => $key->name,
+                        'description' => $key->description,
+
+                    ];
+                }
+            }
+            return view('checkout.finalizar', [
+                'onboard' => $data,
+                'produto' => $produto
+            ]);
+        }
     }
 
     public function getOnboards($emailCorretor = null, $id = null)

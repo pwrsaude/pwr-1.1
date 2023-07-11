@@ -76,7 +76,7 @@
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="cpf_cnpj">CPF do Titular da Assinatura</label>
                             <div class="input-group">
-                                <input type="text" id="cpf_cnpj" name="cpf_cnpj" class="form-control" placeholder="" />
+                                <input type="text" id="cpf_cnpj" name="cpf_cnpj" class="form-control" value="{{ $onboard['cpf_cliente'] }}" placeholder="" />
                             </div>
                         </div>
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
@@ -104,14 +104,14 @@
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="email">Email</label>
                             <div class="input-group input-group-merge">
-                                <input type="text" id="email" name="email" class="form-control" placeholder="example@com.br" aria-describedby="creditCardMask2" />
+                                <input value="{{ $onboard['email'] }}" type="text" id="email" name="email" class="form-control" placeholder="example@com.br" aria-describedby="creditCardMask2" />
                             </div>
                         </div>
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-4">
                             <label class="form-label" for="numeroTelefone">Número de Telefone</label>
                             <div class="input-group">
                                 <span class="input-group-text">BR (+55)</span>
-                                <input type="text" id="numeroTelefone" class="form-control" name="numeroTelefone" placeholder="(11) 99876-5431" />
+                                <input value="{{ $onboard['telefone'] }}" type="text" id="numeroTelefone" class="form-control" name="numeroTelefone" placeholder="(11) 99876-5431" />
                             </div>
                         </div>
                         <div class="row g-3 mb-4">
@@ -183,7 +183,7 @@
                                 <input type="number" id="city" class="form-control" name="numero" placeholder="(Opcional)" />
                             </div>
                         </div>
-                        <button class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
+                        <button onclick="validarSenha()" class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
                     </form>
 
                     <div class="divider my-4">
@@ -215,7 +215,7 @@
                     <div class="card h-70 " style="border-radius: 30px;">
                         <div class="card-body">
                             <h4 class="card-title d-flex justify-content-center mb-3">Informações da sua Assinatura</h4>
-                            <h3 class="card-subtitle d-flex justify-content-center mb-4">+Saúde Familiar</h3>
+                            <h3 class="card-subtitle d-flex justify-content-center mb-4">{{ $produto['name'] }}</h3>
                             <div class="d-flex justify-content-center mb-3">
                                 <h1 style="color:black;" class="card-subtitle fw-bold mb-1">R$ 69,90</h1>
                                 <sub style="color:black;" class="sub-mes">POR MÊS</sub>
@@ -226,7 +226,7 @@
                             </p>
                             <div class="d-flex justify-content-between">
                                 <p class="card-text">
-                                    +Saúde Familiar
+                                    {{ $produto['name'] }}
                                 </p>
                                 <p class="card-text">
                                     R$ 69,90
@@ -234,19 +234,28 @@
                             </div>
                             <div class="d-flex justify-content-between">
                                 <div class="mb-3">
-                                    <div class="input-group">
+                                    {{-- <div class="input-group">
                                         <button style="height: 30px;" type="button" class="btn btn-sm btn-icon btn-outline-primary" readonly>
                                             <span class="tf-icons bx bx-minus"></span>
                                         </button>
-                                        <input size="10" class="form-control form-control-sm" type="text" value="1 Associado" readonly />
+                                        <input size="10" class="form-control form-control-sm" type="text" value=" Vidas: {{$onboard['quantity'] }}" readonly />
                                         <button style="height: 30px;" type="button" class="btn btn-sm btn-icon btn-outline-primary" readonly>
                                             <span class="tf-icons bx bx-plus"></span>
                                         </button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <p class="card-text">
                                     R$ 34,90 por vida
                                 </p>
+                            </div>
+                            <hr class="mt-0">
+                            <div class="d-flex justify-content-between">
+                                <p class="card-text">
+                                    Quantidade de Vidas
+                                </p>
+                                <b class="card-text">
+                                    {{ $onboard['quantity'] }}
+                                </b>
                             </div>
                             <hr class="mt-0">
                             <div class="d-flex justify-content-between">
@@ -287,6 +296,7 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    <script src="{{ asset('assets/js/onboarding/onboard.js') }}"></script>
     <script src="{{asset('assets/vendor/libs/jquery/jquery.js')}}"></script>
     <script src="{{asset('assets/vendor/libs/popper/popper.js')}}"></script>
     <script src="{{asset('assets/vendor/js/bootstrap.js')}}"></script>

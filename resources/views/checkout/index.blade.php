@@ -70,14 +70,15 @@
 
                     <h3 class="mb-2"><a href="/finalizar-cadastro" style="color: black;"><i class="fa-solid fa-arrow-left"></i></a> Concluir Assinatura</h3>
                     <p class="fw-bold mb-3">Informe o CPF do titular infomado na compra</p>
-                    <form id="formFinalizar" action="/finalizar" method="GET">
+                    <form id="formFinalizar" action="{{ route('onboarding.seach.pageFinalizarOnboard') }}" method="POST">
+                        @csrf
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="cpf_cnpj">CPF ou CNPJ</label>
                             <div class="input-group input-group-merge">
                                 <input type="text" id="cpf_cnpj" name="cpf_cnpj" class="form-control" placeholder="" />
                             </div>
                         </div>
-                        <button class="btn btn-primary d-grid w-100">Buscar</button>
+                        <button type="submit" class="btn btn-primary d-grid w-100">Buscar</button>
                     </form>
                     <div class="divider my-4">
                         <div class="divider-text">Precisa de Ajuda?</div>
