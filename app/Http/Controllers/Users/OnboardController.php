@@ -71,4 +71,45 @@ class OnboardController extends Controller
             );
         }
     }
+
+    public function store(
+        $email,
+        $stripe_id,
+        $subscription,
+        $cpf_cliente,
+        $quantity,
+        $stripe_price,
+        $stripe_prod,
+        $telefone,
+        $codigo_pagamento,
+        $email_corretor)
+    {
+        try {
+
+            $data = [
+                'email' => $email,
+                'stripe_id' => $stripe_id,
+                'subscription' => $subscription,
+                'cpf_cliente' => $cpf_cliente,
+                'quantity' => $quantity,
+                'stripe_price' => $stripe_price,
+                'stripe_prod' => $stripe_prod,
+                'telefone' => $telefone,
+                'codigo_pagamento' => $codigo_pagamento,
+                'email_corretor' => $email_corretor
+            ];
+
+            if(!empty($data))
+            {
+                $this->onboardRepository->store($data);
+            }
+
+        } catch (\Throwable $th) {
+
+            throw new Exception(
+                "Não foi possível gerar o onboard: {$th->getMessage()}",
+                500
+            );
+        }
+    }
 }

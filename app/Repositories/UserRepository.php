@@ -55,7 +55,7 @@ class UserRepository
             'password' => bcrypt($data['password']),
             'cpf_cnpj' => $this->setCpf($data['cpf_cnpj']),
             'email' => $data['email'],
-            'access_level' => 5
+            'access_level' => $data['access_level']
 
         ];
 

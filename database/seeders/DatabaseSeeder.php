@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         $PerfilController = new PerfilController();
         $PermissaoController = new PermissaoController();
 
-        $matheus = $UsuarioController->store('Matheus Reis', 'matheus@visioignis.com.br' ,'12345678', '61245784331', 'Administrador');
+        $visio = $UsuarioController->store('Visio Ignis', 'suport@visioignis.com.br', '12345678', '61245784331', 'Administrador', 5);
 
         $PerfilController->criar('Cliente',  'Perfil de Cliente');
         $PerfilController->criar('Administrador', 'Perfil de Administrador', true);

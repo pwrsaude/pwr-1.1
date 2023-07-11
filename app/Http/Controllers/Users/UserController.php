@@ -30,7 +30,7 @@ class UserController extends Controller
         return new UserRepository;
     }
 
-    public function store($name,  $email, $password = null, $cpfCnpj, $nomePerfil = null)
+    public function store($name,  $email, $password = null, $cpfCnpj, $nomePerfil = null, $access_level)
     {
         try {
 
@@ -39,7 +39,8 @@ class UserController extends Controller
             'email' => $email,
             'password' => $password = null ? $cpfCnpj : $password,
             'cpf_cnpj' => $cpfCnpj,
-            'nome_perfil' => 'Administrador'
+            'nome_perfil' => $nomePerfil,
+            'access_level' => $access_level
             ];
 
             if (!empty($data))

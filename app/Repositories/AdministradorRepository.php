@@ -26,7 +26,7 @@ class AdministradorRepository
         if(!empty($data))
         {
 
-            $user = $this->userController->store($data['name'], $data['email'], $data['cpf_cnpj'], $data['cpf'], 'Administrador');
+            $user = $this->userController->store($data['name'], $data['email'], $data['cpf_cnpj'], $data['cpf'], 'Administrador', 5);
 
             if($user)
             {

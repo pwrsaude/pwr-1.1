@@ -21,7 +21,7 @@ class AdministradorController extends Controller
     {
         return new AdministradorRepository;
     }
-    public function store($user_id, $status, $status_describle = null, $cpf, $email, $telefone, $name)
+    public function store($user_id, $status, $status_describle = null, $cpf, $email, $telefone, $name, $access_level = 3)
     {
         try {
 
@@ -31,7 +31,8 @@ class AdministradorController extends Controller
                 'status_describle' => $status_describle,
                 'cpf_cnpj' => $cpf,
                 'email' => $email,
-                'password' => $cpf
+                'password' => $cpf,
+                'access_level' => $access_level
             ];
 
             if (!empty($data))
