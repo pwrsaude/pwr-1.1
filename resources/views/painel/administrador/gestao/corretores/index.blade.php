@@ -14,7 +14,7 @@
                     <input type="text" class="form-control" placeholder="Digite um CPF/Carterinha/Nome ou Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
                     <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
                 </div>
-                <a href="/painel/admin/gestao/gratuidade/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Novo Corretor</a>
+                <a href="/painel/admin/gestao/corretor/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Novo Corretor</a>
             </div>
             <div class="table-responsive text-nowrap">
                 <table class="table">

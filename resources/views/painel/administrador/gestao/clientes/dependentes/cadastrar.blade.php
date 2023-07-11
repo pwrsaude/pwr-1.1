@@ -1,13 +1,13 @@
 @extends('layouts/main')
-@section('title', 'PwrSaúde - Cadastrar Corretor')
+@section('title', 'PwrSaúde - Cadastrar Dependente')
 
 @section('content')
 <!-- Ini: Content -->
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4">
-        <span class="text-muted fw-light">Gestão de Corretores /</span>
-        Novo Corretor
+        <span class="text-muted fw-light">Gestão de Dependentes /</span>
+        Cadastrar Dependente
     </h4>
     <!-- Sticky Actions -->
     <div class="row">
@@ -42,14 +42,13 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-label" for="dataNascimento">Data de Nascimento</label>
-                                        <input type="text" id="dataNascimento" name="dataNascimento" class="form-control" required />
+                                        <input type="date" id="dataNascimento" name="dataNascimento" class="form-control" required />
                                         <div class="invalid-feedback">Informe uma data de nascimento válida.</div>
                                     </div>
                                     <div class="col-md-5">
                                         <label class="form-label" for="email">Email</label>
-                                        <div class="input-group input-group-merge">
-                                            <input class="form-control" type="text" id="email" name="email" aria-label="john.doe" aria-describedby="email3" required />
-                                            <span class="input-group-text" id="email3">@example.com</span>
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" id="email" name="email" placeholder="example@com.br" required />
                                             <div class="invalid-feedback">Digite um email válido.</div>
                                         </div>
                                     </div>
@@ -117,7 +116,6 @@
                                         <label class="form-label" for="city">Número</label>
                                         <input type="number" id="city" class="form-control" name="numero" placeholder="(Opcional)" />
                                     </div>
-
 
                                 </div>
                                 <p id="demo"></p>

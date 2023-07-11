@@ -23,6 +23,14 @@ Route::get('/checkout', function () {
     return view('checkout.home');
 });
 
+Route::get('/finalizar-cadastro', function () {
+    return view('checkout.index');
+});
+
+Route::get('/finalizar', function () {
+    return view('checkout.finalizar');
+});
+
 Route::prefix('/cliente')->name('cliente.')->group(function () {
 });
 
@@ -55,10 +63,12 @@ Route::prefix('/painel')->name('painel.')->group(function () {
 
         Route::get('/gestao-financeira', [PainelController::class, "gestaoFinanceira"])->name('gestao-financeira');
 
-        Route::prefix('/gestao')->name('gestao.')->group(function ()
-        {
+        Route::prefix('/gestao')->name('gestao.')->group(function () {
             Route::get('/clientes', [PainelController::class, "gestaoClientes"])->name('gestao-clientes');
 
+            Route::get('/cliente', function () {
+                return view('painel.administrador.gestao.clientes.informacoes');
+            });
             Route::get('/administradores', [PainelController::class, "gestaoAdministradores"])->name('gestao-admins');
 
             Route::get('/gratuidades', [PainelController::class, "gestaoGratuidades"])->name('gestao-gratuidades');

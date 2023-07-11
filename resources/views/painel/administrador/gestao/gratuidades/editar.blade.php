@@ -1,13 +1,13 @@
 @extends('layouts/main')
-@section('title', 'PwrSaúde - Cadastrar Corretor')
+@section('title', 'PwrSaúde - Editar Gratuidade')
 
 @section('content')
 <!-- Ini: Content -->
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4">
-        <span class="text-muted fw-light">Gestão de Corretores /</span>
-        Novo Corretor
+        <span class="text-muted fw-light">Gestão de Gratuidades /</span>
+        Editar Gratuidade
     </h4>
     <!-- Sticky Actions -->
     <div class="row">
@@ -42,14 +42,13 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-label" for="dataNascimento">Data de Nascimento</label>
-                                        <input type="text" id="dataNascimento" name="dataNascimento" class="form-control" required />
+                                        <input type="date" id="dataNascimento" name="dataNascimento" class="form-control" required />
                                         <div class="invalid-feedback">Informe uma data de nascimento válida.</div>
                                     </div>
                                     <div class="col-md-5">
                                         <label class="form-label" for="email">Email</label>
-                                        <div class="input-group input-group-merge">
-                                            <input class="form-control" type="text" id="email" name="email" aria-label="john.doe" aria-describedby="email3" required />
-                                            <span class="input-group-text" id="email3">@example.com</span>
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" id="email" name="email" placeholder="example@com.br" required />
                                             <div class="invalid-feedback">Digite um email válido.</div>
                                         </div>
                                     </div>
@@ -120,8 +119,36 @@
 
 
                                 </div>
+                                <!-- 2. Delivery Type -->
+                                <h5 class="my-4">2. Tipo de Gratuidade</h5>
+                                <div class="row gy-3">
+                                    <div class="col-md">
+                                        <div class="form-check custom-option custom-option-icon">
+                                            <label class="form-check-label custom-option-content" for="customRadioIcon1">
+                                                <span class="custom-option-body">
+                                                    <i class="bx bx-briefcase-alt-2"></i>
+                                                    <span class="custom-option-title"> Funcionario </span>
+                                                    <small> Não tem tempo de expiração. </small>
+                                                </span>
+                                                <input name="tipoGratuidade" class="form-check-input" type="radio" value="funcionario" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-check custom-option custom-option-icon">
+                                            <label class="form-check-label custom-option-content" for="customRadioIcon2">
+                                                <span class="custom-option-body">
+                                                    <i class="bx bx-paper-plane"></i>
+                                                    <span class="custom-option-title"> Cortesia </span>
+                                                    <input class="form-control form-control-sm" type="date" name="fimGratuidade" />
+                                                </span>
+                                                <input class="form-check-input" type="radio" value="" name="tipoGratuidade" value="gratuidade" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <p id="demo"></p>
-                                <button type="submit" class="btn btn-primary w-30">Cadastrar</button>
+                                <button type="submit" class="btn btn-primary w-30">Salvar</button>
                                 <button type="reset" class="btn btn-danger w-30">Cancelar</button>
                             </form>
                         </div>

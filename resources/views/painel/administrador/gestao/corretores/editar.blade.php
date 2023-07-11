@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('title', 'PwrSaúde - Cadastrar Corretor')
+@section('title', 'PwrSaúde - Editar Corretor')
 
 @section('content')
 <!-- Ini: Content -->
@@ -7,7 +7,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4">
         <span class="text-muted fw-light">Gestão de Corretores /</span>
-        Novo Corretor
+        Editar Corretor
     </h4>
     <!-- Sticky Actions -->
     <div class="row">
@@ -121,7 +121,7 @@
 
                                 </div>
                                 <p id="demo"></p>
-                                <button type="submit" class="btn btn-primary w-30">Cadastrar</button>
+                                <button type="submit" class="btn btn-primary w-30">Salvar</button>
                                 <button type="reset" class="btn btn-danger w-30">Cancelar</button>
                             </form>
                         </div>
