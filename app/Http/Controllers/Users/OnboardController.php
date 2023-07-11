@@ -82,7 +82,8 @@ class OnboardController extends Controller
         $stripe_prod,
         $telefone,
         $codigo_pagamento,
-        $email_corretor)
+        $email_corretor,
+        $uuid)
     {
         try {
 
@@ -96,7 +97,8 @@ class OnboardController extends Controller
                 'stripe_prod' => $stripe_prod,
                 'telefone' => $telefone,
                 'codigo_pagamento' => $codigo_pagamento,
-                'email_corretor' => $email_corretor
+                'email_corretor' => $email_corretor,
+                'uuid' => $uuid
             ];
 
             if(!empty($data))
@@ -108,6 +110,51 @@ class OnboardController extends Controller
 
             throw new Exception(
                 "Não foi possível gerar o onboard: {$th->getMessage()}",
+                500
+            );
+        }
+    }
+
+    public function setPriceOnboard($stripe_id, $stripe_price, $stripe_prod)
+    {
+        try {
+
+            $data = [
+                'stripe_id' => $stripe_id,
+                'stripe_price' => $stripe_price,
+                'stripe_prod' => $stripe_prod
+            ];
+            if(!empty($data))
+            {
+                $this->onboardRepository->setPriceOnboard($data);
+            }
+
+        } catch (\Throwable $th) {
+
+            throw new Exception(
+                "Não foi possível gravar o stripe_price: {$th->getMessage()}",
+                500
+            );
+        }
+    }
+
+    public function setQuantityPlan($stripe_id, $quantity)
+    {
+        try {
+
+            $data = [
+                'stripe_id' => $stripe_id,
+                'quantity' => $quantity,
+            ];
+            if(!empty($data))
+            {
+                $this->onboardRepository->setQuantity($data);
+            }
+
+        } catch (\Throwable $th) {
+
+            throw new Exception(
+                "Não foi possível gravar o stripe_price: {$th->getMessage()}",
                 500
             );
         }

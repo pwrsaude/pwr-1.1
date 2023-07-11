@@ -59,4 +59,30 @@ class OnboardRepository
                 }
         }
     }
+
+    public function setPriceOnboard($data)
+    {
+        if(isset($data['stripe_id']))
+        {
+            $onboard = $this->modelOnboard->query()->where('stripe_id', $data['stripe_id']);
+
+            $onboard->update([
+                'stripe_price' => $data['stripe_price']
+            ]);
+
+            $onboard->update([
+                'stripe_prod' => $data['stripe_price']
+            ]);
+        }
+    }
+
+    public function setQuantity($data)
+    {
+        if(isset($data['stripe_id']))
+        {
+            $onboard = $this->modelOnboard->query()->where('stripe_id', $data['stripe_id']);
+
+            $onboard->update(['quantity' => $data['quantity']]);
+        }
+    }
 }

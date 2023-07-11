@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Stripe\StripeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('/pagamento')->name('pagamento.')->group(function () {
+
+    // Route::post('/webhook', [PagamentoController::class, 'webhook'])->name('webhook');
+    Route::post('/webhook', [StripeController::class, 'webhook'])->name('webhook');
+    Route::get('/index/{position}', [StripeController::class, 'index'])->name('index');
+
 });
