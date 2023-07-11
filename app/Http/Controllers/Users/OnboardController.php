@@ -30,9 +30,40 @@ class OnboardController extends Controller
         return new OnboardRepository;
     }
 
-    public function criarCliente()
+    public function criarCliente(Request $request)
     {
+        try {
 
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'cpf_cnpj' => $request->cpf_cnpj,
+                'password' => $request->password,
+                'telefone' => $request->telefone,
+                'sexo' => $request->sexo,
+                'data_nascimento' => $request->data_nascimento,
+                'cep' => $request->cep,
+                'logradouro' => $request->logradouro,
+                'cidade' => $request->cidade,
+                'bairro' => $request->bairro,
+                'numero' => $request->numero,
+                'estado' => $request->estado
+            ];
+
+            if(!empty($data) && $request->password == $request->password_confirm)
+            {
+                $cliente = $this->onboardRepository->criarCliente($data);
+
+                return $cliente;
+            }
+        } catch (\Throwable $th) {
+
+
+            throw new Exception(
+                "Não foi possível  realizar essa ação: {$th->getMessage()}",
+                500
+            );
+        }
     }
 
     public function pageFinalizarOnboard(Request $request)

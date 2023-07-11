@@ -72,6 +72,17 @@ class UserRepository
 
     public function getUser($data)
     {
-        return $this->modelUser->query()->where('id', $data['user_id'])->get();
+        $user = $this->modelUser->query();
+
+        if(isset($data['user_id']))
+        {
+            $user->where('id', $data['user_id']);
+        }
+
+        if(isset($data['cpf_cnpj']))
+        {
+            $user->where('cpf_cnpj', $data['cpf_cnpj']);
+        }
+        return $user->get();
     }
 }

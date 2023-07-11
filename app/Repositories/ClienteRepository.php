@@ -22,7 +22,7 @@ class ClienteRepository
         return new Cliente();
     }
 
-    public function newCliente($data)
+    public function store($data)
     {
         if($user = $this->userController->getUser($data['user_id']))
         {
@@ -32,6 +32,7 @@ class ClienteRepository
                 'user_id' => $user->id,
                 'name' => $user->name,
                 'cpf_cnpj' => $data['cpf_cnpj'],
+                'email' => $data['email'],
                 'data_nascimento' => $data['data_nascimento'],
                 'sexo' => $data['sexo'],
                 'status' => 'ativo'
