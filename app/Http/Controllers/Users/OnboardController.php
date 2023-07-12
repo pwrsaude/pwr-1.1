@@ -98,6 +98,7 @@ class OnboardController extends Controller
         }
     }
 
+
     public function getOnboards($emailCorretor = null, $id = null)
     {
         try {

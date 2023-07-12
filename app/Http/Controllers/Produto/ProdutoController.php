@@ -16,6 +16,54 @@ class ProdutoController extends Controller
         $this->produtoRepository = new ProdutoRepository;
     }
 
+    public function storeTipoProduto($type)
+    {
+        try {
+
+            $data = ['type' => $type];
+
+            if(!empty($data))
+            {
+                $tipoProduto = $this->produtoRepository->storeTipoProduto($data);
+            }
+            return $tipoProduto;
+
+        } catch (\Throwable $th) {
+
+
+            throw new Exception(
+                "Não foi possível  realizar essa ação: {$th->getMessage()}",
+                500
+            );
+        }
+    }
+
+    public function storeProduto($name, $description, $stripe_prod, $stripe_price = null, $tipo_produto_id)
+    {
+        try{
+            $data = [
+                'name' => $name,
+                'description' => $description,
+                'stripe_prod' => $stripe_prod,
+                'stripe_price' => $stripe_price,
+                'tipo_produto_id' => $tipo_produto_id
+            ];
+
+            if(!empty($data))
+            {
+                $produto = $this->produtoRepository->storeProduto($data);
+                return $produto;
+            }
+        }catch (\Throwable $th) {
+
+
+            throw new Exception(
+                "Não foi possível  realizar essa ação: {$th->getMessage()}",
+                500
+            );
+        }
+    }
+
     public function getProduto($stripe_prod = null, $stripe_price = null)
     {
         try {
