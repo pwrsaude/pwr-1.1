@@ -30,3 +30,4 @@
             }).catch(e => document.getElementById("invalid-cep").innerHTML = 'CEP digitado é inválido!');
     });
 })();
+

@@ -22,7 +22,7 @@ Route::get('/recuperar', function () {
  */
 Route::prefix('/onboarding')->group(function () {
     Route::get('/search', [OnboardController::class, 'pageVerificarCpfOnboard'])->name('onboarding.search.pageVerificarCpfOnboard');
-    Route::post('/search', [OnboardController::class, 'pageFinalizarOnboard'])->name('onboarding.seach.pageFinalizarOnboard');
+    Route::post('/search', [OnboardController::class, 'pageFinalizarOnboard'])->name('onboarding.search.pageFinalizarOnboard');
 });
 
 Route::prefix('/cliente')->name('cliente.')->group(function () {

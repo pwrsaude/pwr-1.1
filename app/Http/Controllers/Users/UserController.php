@@ -30,7 +30,7 @@ class UserController extends Controller
         return new UserRepository;
     }
 
-    public function store($name,  $email, $password = null, $cpfCnpj, $nomePerfil = null, $access_level)
+    public function store($name,  $email, $password = null, $cpfCnpj, $nomePerfil = null, $access_level, $stripe_id = null)
     {
         try {
 
@@ -40,7 +40,8 @@ class UserController extends Controller
             'password' => $password = null ? $cpfCnpj : $password,
             'cpf_cnpj' => $cpfCnpj,
             'nome_perfil' => $nomePerfil,
-            'access_level' => $access_level
+            'access_level' => $access_level,
+            'stripe_id' => $stripe_id
             ];
 
             if (!empty($data))
@@ -60,13 +61,30 @@ class UserController extends Controller
         }
     }
 
-    public function getUser($user_id)
+    public function getUser($user_id = null, $cpf_cnpj = null, $email = null)
     {
         try {
 
-            $data = [
-                'user_id' => $user_id
-            ];
+            if(!is_null($user_id))
+            {
+                $data = [
+                    'user_id' => $user_id
+                ];
+            }
+
+            if(!is_null($cpf_cnpj))
+            {
+                $data = [
+                    'cpf_cnpj' => $cpf_cnpj
+                ];
+            }
+
+            if(!is_null($email))
+            {
+                $data = [
+                    'email' => $email
+                ];
+            }
 
             if(!empty($data))
             {

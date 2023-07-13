@@ -70,8 +70,8 @@
 
                     <h3 class="mb-2"><a href="/finalizar-cadastro" style="color: black;"><i class="fa-solid fa-arrow-left"></i></a> Concluir Assinatura</h3>
 
-                    <form id="formFinalizar" action="/checkout/finalizar" method="POST">
-
+                    <form id="formFinalizar" action="{{ route('onboarding.search.pageFinalizarOnboard') }}" method="POST">
+                        @csrf
                         <p class="fw-bold mb-2">Dados do Titular da Assinatura</p>
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="cpf_cnpj">CPF do Titular da Assinatura</label>
@@ -179,12 +179,13 @@
                                 <label class="form-label" for="rua">Rua</label>
                                 <input type="text" id="rua" class="form-control" name="rua" />
                             </div>
+                            <input type="hidden" name="client_identify" value="{{ $onboard['client_identify']  }}">
                             <div class="col-md">
                                 <label class="form-label" for="numero">Número</label>
                                 <input type="number" id="numero" class="form-control" name="numero" placeholder="(Opcional)" />
                             </div>
                         </div>
-                        <button onclick="validarSenha()" class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
+                        <button type="submit" onclick="validarSenha()" class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
                     </form>
 
                     <div class="divider my-4">
@@ -297,6 +298,7 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    <script src="{{asset('assets/js/cep.js')}}"></script>
     <script src="{{ asset('assets/js/onboarding/onboard.js') }}"></script>
     <script src="{{asset('assets/vendor/libs/jquery/jquery.js')}}"></script>
     <script src="{{asset('assets/vendor/libs/popper/popper.js')}}"></script>
