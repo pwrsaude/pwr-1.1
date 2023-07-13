@@ -196,18 +196,14 @@
         // When click the Next button, we will validate the current step
         switch (validationStepper._currentIndex) {
           case 0:
-            FormValidation1.validate();
-            break;
-
-          case 1:
             FormValidation2.validate();
             break;
 
-          case 2:
+          case 1:
             FormValidation3.validate();
             break;
 
-          case 3:
+          case 2:
             FormValidation4.validate();
             break;
 

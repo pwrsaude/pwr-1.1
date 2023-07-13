@@ -14,7 +14,9 @@
                     <input type="text" class="form-control" placeholder="Digite um CPF/Carterinha/Nome ou Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
                     <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
                 </div>
-                <a href="/painel/admin/gestao/administrador/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Novo Administrador</a>
+                <div class="demo-inline-spacing">
+                    <a href="/painel/admin/gestao/administrador/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Novo Administrador</a>
+                </div>
             </div>
             <div class="table-responsive text-nowrap">
                 <table class="table">
@@ -29,75 +31,62 @@
                     <tbody class="table-border-bottom-0">
                         <tr>
                             <td>Albert Cook</td>
-                            <td>Editar Permissões</td>
-
+                            <td><a href="" class="btn btn-sm btn-primary">
+                                    Editar Permissões</a></td>
                             <td><span class="badge bg-label-primary me-1">Ativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <a href="" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </a>
+                                <a href="" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </a>
                             </td>
                         </tr>
                         <tr>
                             <td>Barry Hunter</td>
-                            <td>Editar Permissões</td>
+                            <td><a href="" class="btn btn-sm btn-primary">
+                                    Editar Permissões</a></td>
 
                             <td><span class="badge bg-label-primary me-1">Ativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <a href="" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </a>
+                                <a href="" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </a>
                             </td>
                         </tr>
                         <tr>
                             <td>Trevor Baker</td>
-                            <td>Editar Permissões</td>
+                            <td><a href="" class="btn btn-sm btn-primary">
+                                    Editar Permissões</a></td>
 
                             <td><span class="badge bg-label-primary me-1">Ativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <a href="" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </a>
+                                <a href="" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </a>
                             </td>
                         </tr>
                         <tr>
 
                             <td>Jerry Milton</td>
-                            <td>Editar Permissões</td>
+                            <td><a href="" class="btn btn-sm btn-primary">
+                                    Editar Permissões</a></td>
 
                             <td><span class="badge bg-label-danger me-1">Inativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <a href="" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </a>
+                                <a href="" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </a>
                             </td>
                         </tr>
                     </tbody>

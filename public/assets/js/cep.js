@@ -25,8 +25,8 @@
 
                     document.getElementById("invalid-cep").style.display = "none";
                     document.getElementById("invalid-cep").style.display = "block";
-                    document.getElementById("invalid-cep").innerHTML = 'CEP invalido!';
+                    document.getElementById("invalid-cep").innerHTML = 'CEP digitado é inválido!';
                 }
-            }).catch(e => document.getElementById("invalid-cep").innerHTML = 'CEP invalido!');
+            }).catch(e => document.getElementById("invalid-cep").innerHTML = 'CEP digitado é inválido!');
     });
 })();

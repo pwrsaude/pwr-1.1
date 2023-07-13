@@ -14,14 +14,16 @@
                     <input type="text" class="form-control" placeholder="Digite um CPF/Carterinha/Nome ou Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
                     <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
                 </div>
-                <a href="/painel/admin/gestao/corretor/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Novo Corretor</a>
+                <div class="demo-inline-spacing">
+                    <a href="/painel/admin/gestao/corretor/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Novo Corretor</a>
+                </div>
             </div>
             <div class="table-responsive text-nowrap">
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            <th>Plano do Cliente</th>
+                            <th>CPF</th>
                             <th>Qtd. Clientes</th>
                             <th>Status</th>
                             <th>Ações</th>
@@ -34,16 +36,15 @@
                             <td><span class="badge bg-label-primary me-1">20</span></td>
                             <td><span class="badge bg-label-primary me-1">Ativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -52,16 +53,15 @@
                             <td><span class="badge bg-label-primary me-1">70</span></td>
                             <td><span class="badge bg-label-primary me-1">Ativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -70,16 +70,15 @@
                             <td><span class="badge bg-label-primary me-1">50</span></td>
                             <td><span class="badge bg-label-primary me-1">Ativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -89,16 +88,15 @@
                             <td><span class="badge bg-label-primary me-1">20</span></td>
                             <td><span class="badge bg-label-danger me-1">Inativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                     </tbody>

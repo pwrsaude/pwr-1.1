@@ -20,7 +20,7 @@ Route::get('/recuperar', function () {
 /**
  * rota checkout
  */
-Route::prefix('/onboarding')->group(function(){
+Route::prefix('/onboarding')->group(function () {
     Route::get('/search', [OnboardController::class, 'pageVerificarCpfOnboard'])->name('onboarding.search.pageVerificarCpfOnboard');
     Route::post('/search', [OnboardController::class, 'pageFinalizarOnboard'])->name('onboarding.seach.pageFinalizarOnboard');
 });
@@ -62,7 +62,7 @@ Route::prefix('/painel')->name('painel.')->group(function () {
 
             Route::get('/cliente', function () {
                 return view('painel.administrador.gestao.clientes.informacoes');
-            });
+            })->name('gestao-cliente');
             Route::get('/administradores', [PainelController::class, "gestaoAdministradores"])->name('gestao-admins');
 
             Route::get('/gratuidades', [PainelController::class, "gestaoGratuidades"])->name('gestao-gratuidades');
