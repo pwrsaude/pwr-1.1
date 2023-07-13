@@ -239,57 +239,57 @@
                                             <span class="tf-icons bx bx-minus"></span>
                                         </button>
                                         <input size="10" class="form-control form-control-sm" type="text" value=" Vidas: {{$onboard['quantity'] }}" readonly />
-                                        <button style="height: 30px;" type="button" class="btn btn-sm btn-icon btn-outline-primary" readonly>
-                                            <span class="tf-icons bx bx-plus"></span>
-                                        </button>
-                                    </div> --}}
-                                </div>
-                                <p class="card-text">
-                                    R$ 34,90 por vida
-                                </p>
+                                    <button style="height: 30px;" type="button" class="btn btn-sm btn-icon btn-outline-primary" readonly>
+                                        <span class="tf-icons bx bx-plus"></span>
+                                    </button>
+                                </div> --}}
                             </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    Quantidade de Vidas
-                                </p>
-                                <b class="card-text">
-                                    {{ $onboard['quantity'] }}
-                                </b>
-                            </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    Subtotal
-                                </p>
-                                <b class="card-text">
-                                    R$ 69,90
-                                </b>
-                            </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    Descontos
-                                </p>
-                                <p class="card-text">
-                                    R$ 0,00
-                                </p>
-                            </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    TOTAL
-                                </p>
-                                <p class="card-text">
-                                    R$ 69,90
-                                </p>
-                            </div>
+                            <p class="card-text">
+                                R$ 34,90 por vida
+                            </p>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                Quantidade de Vidas
+                            </p>
+                            <b class="card-text">
+                                {{ $onboard['quantity'] }}
+                            </b>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                Subtotal
+                            </p>
+                            <b class="card-text">
+                                R$ 69,90
+                            </b>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                Descontos
+                            </p>
+                            <p class="card-text">
+                                R$ 0,00
+                            </p>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                TOTAL
+                            </p>
+                            <p class="card-text">
+                                R$ 69,90
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /Register -->
         </div>
+        <!-- /Register -->
+    </div>
     </div>
 
     <!-- / Content -->
@@ -316,8 +316,18 @@
 
     <!-- Page JS -->
     <script src="{{asset('assets/js/forms-extras.js')}}"></script>
-
     <script src="{{asset('assets/js/pages-auth.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $('#cep').mask('00000-000');
+        $('#numeroTelefone').mask('(00) 00000-0000');
+        $('#cpf_cnpj').mask('000.000.000-00', {
+            reverse: true
+        });
+    </script>
+    <script src="{{asset('assets/js/form-validation.js')}}"></script>
+    <script src="{{asset('assets/js/forms-extras.js')}}"></script>
+    <script src="{{asset('assets/js/cep.js')}}"></script>
 </body>
 
 </html>
