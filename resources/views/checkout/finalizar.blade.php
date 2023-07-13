@@ -130,8 +130,9 @@
                         <div class="row g-3 mb-4">
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="cep">CEP</label>
-                                <input type="text" id="cep" class="form-control" name="cep" placeholder="72318-552" required />
-                                <div class="invalid-feedback">Digite um email válido.</div>
+                                <input type="text" id="cep" class="form-control" name="cep" placeholder="72318-552" minlength="8" required />
+                                <div class="invalid-feedback">Digite um CEP válido.</div>
+                                <small id="invalid-cep" style="color: red;"></small>
                             </div>
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="state">Estado</label>
@@ -167,20 +168,20 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-0">
-                                <label class="form-label" for="landmark">Cidade</label>
-                                <input type="text" id="landmark" class="form-control" name="cidade" />
+                                <label class="form-label" for="cidade">Cidade</label>
+                                <input type="text" id="cidade" class="form-control" name="cidade" />
                             </div>
                             <div class="col-md-6 mb-0">
-                                <label class="form-label" for="city">Bairro</label>
-                                <input type="text" id="city" class="form-control" name="bairro" />
+                                <label class="form-label" for="bairro">Bairro</label>
+                                <input type="text" id="bairro" class="form-control" name="bairro" />
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label" for="city">Rua</label>
-                                <input type="text" id="city" class="form-control" name="rua" />
+                                <label class="form-label" for="rua">Rua</label>
+                                <input type="text" id="rua" class="form-control" name="rua" />
                             </div>
                             <div class="col-md">
-                                <label class="form-label" for="city">Número</label>
-                                <input type="number" id="city" class="form-control" name="numero" placeholder="(Opcional)" />
+                                <label class="form-label" for="numero">Número</label>
+                                <input type="number" id="numero" class="form-control" name="numero" placeholder="(Opcional)" />
                             </div>
                         </div>
                         <button onclick="validarSenha()" class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
