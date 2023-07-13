@@ -43,7 +43,7 @@ class OnboardController extends Controller
                 'sexo' => $request->sexo,
                 'data_nascimento' => $request->data_nascimento,
                 'cep' => $request->cep,
-                'logradouro' => $request->logradouro,
+                'logradouro' => $request->rua,
                 'cidade' => $request->cidade,
                 'bairro' => $request->bairro,
                 'numero' => $request->numero,
@@ -65,7 +65,7 @@ class OnboardController extends Controller
             );
         }
     }
-
+    //requer refatoração: Repository patterns
     public function pageFinalizarOnboard(Request $request)
     {
         if($onboard = $this->onboardRepository->getOnboards($data = ['cpf_cnpj' => $request->cpf]))
@@ -77,10 +77,11 @@ class OnboardController extends Controller
                     'cpf_cliente' => $value->cpf_cliente,
                     'email' => $value->email,
                     'quantity' => $value->quantity,
-                    'telefone' => $value->telefone
+                    'telefone' => $value->telefone,
+                    'client_identify' => $value->stripe_id
                 ];
 
-                $produto = $this->produtoController->getProduto($value->stripe_prod, null);
+                $produto = $this->produtoController->getProduto('prod_Nz7RMQo1fl3Q80', null);
 
                 foreach($produto as $key)
                 {
@@ -99,7 +100,7 @@ class OnboardController extends Controller
     }
 
 
-    public function getOnboards($emailCorretor = null, $id = null)
+    public function getOnboards($emailCorretor = null, $id = null, $cpf_cnpj = null)
     {
         try {
             $data = [];
@@ -114,6 +115,13 @@ class OnboardController extends Controller
             {
                 $data = [
                     'email_corretor' => $id
+                ];
+            }
+
+            if(!is_null($cpf_cnpj))
+            {
+                $data = [
+                    'cpf_cnpj' => $cpf_cnpj
                 ];
             }
 

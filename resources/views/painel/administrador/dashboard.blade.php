@@ -10,7 +10,7 @@
                 <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Bom te ver John Doe! 🎉</h5>
+                            <h5 class="card-title text-primary">Bom te ver {{ auth()->user()->name }} 🎉</h5>
                             <p class="mb-4">
                                 Aqui estão as atualização do sistema
                             </p>
