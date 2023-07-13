@@ -15,9 +15,19 @@
                     document.querySelector('input[name=bairro]').value = json.bairro;
                     document.querySelector('input[name=cidade]').value = json.localidade;
                     document.querySelector('select[name=uf]').value = json.uf;
+                    document.getElementById("invalid-cep").style.display = "none";
                 }
+                if(json.erro){
+                    document.querySelector('input[name=rua]').value = ''
+                    document.querySelector('input[name=bairro]').value = ''
+                    document.querySelector('input[name=cidade]').value = ''
+                    document.querySelector('select[name=uf]').value = ''
 
-            }).catch(e => document.getElementById("demo").innerHTML = 'Cep não encontrado');
+                    document.getElementById("invalid-cep").style.display = "none";
+                    document.getElementById("invalid-cep").style.display = "block";
+                    document.getElementById("invalid-cep").innerHTML = 'CEP invalido!';
+                }
+            }).catch(e => document.getElementById("invalid-cep").innerHTML = 'CEP invalido!');
     });
 })();
 

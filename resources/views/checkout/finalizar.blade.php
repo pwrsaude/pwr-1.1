@@ -130,8 +130,9 @@
                         <div class="row g-3 mb-4">
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="cep">CEP</label>
-                                <input type="text" id="cep" class="form-control" name="cep" placeholder="72318-552" required />
-                                <div class="invalid-feedback">Digite um email válido.</div>
+                                <input type="text" id="cep" class="form-control" name="cep" placeholder="72318-552" minlength="8" required />
+                                <div class="invalid-feedback">Digite um CEP válido.</div>
+                                <small id="invalid-cep" style="color: red;"></small>
                             </div>
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="state">Estado</label>
@@ -167,21 +168,21 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-0">
-                                <label class="form-label" for="landmark">Cidade</label>
-                                <input type="text" id="landmark" class="form-control" name="cidade" />
+                                <label class="form-label" for="cidade">Cidade</label>
+                                <input type="text" id="cidade" class="form-control" name="cidade" />
                             </div>
                             <div class="col-md-6 mb-0">
-                                <label class="form-label" for="city">Bairro</label>
-                                <input type="text" id="city" class="form-control" name="bairro" />
+                                <label class="form-label" for="bairro">Bairro</label>
+                                <input type="text" id="bairro" class="form-control" name="bairro" />
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label" for="city">Rua</label>
-                                <input type="text" id="city" class="form-control" name="rua" />
+                                <label class="form-label" for="rua">Rua</label>
+                                <input type="text" id="rua" class="form-control" name="rua" />
                             </div>
                             <input type="hidden" name="client_identify" value="{{ $onboard['client_identify']  }}">
                             <div class="col-md">
-                                <label class="form-label" for="city">Número</label>
-                                <input type="number" id="city" class="form-control" name="numero" placeholder="(Opcional)" />
+                                <label class="form-label" for="numero">Número</label>
+                                <input type="number" id="numero" class="form-control" name="numero" placeholder="(Opcional)" />
                             </div>
                         </div>
                         <button type="submit" onclick="validarSenha()" class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
@@ -240,57 +241,57 @@
                                             <span class="tf-icons bx bx-minus"></span>
                                         </button>
                                         <input size="10" class="form-control form-control-sm" type="text" value=" Vidas: {{$onboard['quantity'] }}" readonly />
-                                        <button style="height: 30px;" type="button" class="btn btn-sm btn-icon btn-outline-primary" readonly>
-                                            <span class="tf-icons bx bx-plus"></span>
-                                        </button>
-                                    </div> --}}
-                                </div>
-                                <p class="card-text">
-                                    R$ 34,90 por vida
-                                </p>
+                                    <button style="height: 30px;" type="button" class="btn btn-sm btn-icon btn-outline-primary" readonly>
+                                        <span class="tf-icons bx bx-plus"></span>
+                                    </button>
+                                </div> --}}
                             </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    Quantidade de Vidas
-                                </p>
-                                <b class="card-text">
-                                    {{ $onboard['quantity'] }}
-                                </b>
-                            </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    Subtotal
-                                </p>
-                                <b class="card-text">
-                                    R$ 69,90
-                                </b>
-                            </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    Descontos
-                                </p>
-                                <p class="card-text">
-                                    R$ 0,00
-                                </p>
-                            </div>
-                            <hr class="mt-0">
-                            <div class="d-flex justify-content-between">
-                                <p class="card-text">
-                                    TOTAL
-                                </p>
-                                <p class="card-text">
-                                    R$ 69,90
-                                </p>
-                            </div>
+                            <p class="card-text">
+                                R$ 34,90 por vida
+                            </p>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                Quantidade de Vidas
+                            </p>
+                            <b class="card-text">
+                                {{ $onboard['quantity'] }}
+                            </b>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                Subtotal
+                            </p>
+                            <b class="card-text">
+                                R$ 69,90
+                            </b>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                Descontos
+                            </p>
+                            <p class="card-text">
+                                R$ 0,00
+                            </p>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text">
+                                TOTAL
+                            </p>
+                            <p class="card-text">
+                                R$ 69,90
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /Register -->
         </div>
+        <!-- /Register -->
+    </div>
     </div>
 
     <!-- / Content -->
@@ -318,8 +319,18 @@
 
     <!-- Page JS -->
     <script src="{{asset('assets/js/forms-extras.js')}}"></script>
-
     <script src="{{asset('assets/js/pages-auth.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $('#cep').mask('00000-000');
+        $('#numeroTelefone').mask('(00) 00000-0000');
+        $('#cpf_cnpj').mask('000.000.000-00', {
+            reverse: true
+        });
+    </script>
+    <script src="{{asset('assets/js/form-validation.js')}}"></script>
+    <script src="{{asset('assets/js/forms-extras.js')}}"></script>
+    <script src="{{asset('assets/js/cep.js')}}"></script>
 </body>
 
 </html>
