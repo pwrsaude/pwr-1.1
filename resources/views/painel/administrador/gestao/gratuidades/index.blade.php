@@ -14,7 +14,9 @@
                     <input type="text" class="form-control" placeholder="Digite um CPF/Carterinha/Nome ou Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
                     <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
                 </div>
-                <a href="/painel/admin/gestao/gratuidade/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Nova Gratuidade</a>
+                <div class="demo-inline-spacing">
+                    <a href="/painel/admin/gestao/gratuidade/cadastrar" class="btn btn-primary" type="button" id="button-addon2">Cadastrar Nova Gratuidade</a>
+                </div>
             </div>
             <div class="table-responsive text-nowrap">
                 <table class="table">
@@ -31,123 +33,69 @@
                         <tr>
                             <td>Albert Cook</td>
                             <td><span class="badge bg-label-warning me-1">+ Saúde Familiar</span></td>
+                            <td><span class="badge bg-label-primary me-1">2</span></td>
+                            <td><span class="badge bg-label-success me-1">Ativo</span></td>
                             <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                        <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                        <img src="../../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                                        <img src="../../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-primary me-1">Ativo</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                         <tr>
                             <td>Barry Hunter</td>
                             <td><span class="badge bg-label-warning me-1">+ Saúde Familiar</span></td>
+                            <td><span class="badge bg-label-primary me-1">2</span></td>
+                            <td><span class="badge bg-label-primary me-1">Pendente</span></td>
                             <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                        <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                        <img src="../../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                                        <img src="../../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-primary me-1">Activo</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                         <tr>
                             <td>Trevor Baker</td>
                             <td><span class="badge bg-label-warning me-1">+ Saúde Familiar</span></td>
-
+                            <td><span class="badge bg-label-primary me-1">2</span></td>
+                            <td><span class="badge bg-label-primary me-1">Pendente</span></td>
                             <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                        <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                        <img src="../../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                                        <img src="../../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-primary me-1">Ativo</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                         <tr>
-
                             <td>Jerry Milton</td>
                             <td><span class="badge bg-label-warning me-1">+ Saúde Familiar</span></td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                        <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                        <img src="../../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                                        <img src="../../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                </ul>
-                            </td>
+                            <td><span class="badge bg-label-primary me-1">2</span></td>
                             <td><span class="badge bg-label-danger me-1">Inativo</span></td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Editar</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Ver Informações</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-icon btn-success">
+                                    <span class="tf-icons bx bx-low-vision"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-primary">
+                                    <span class="tf-icons bx bx-user"></span>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-warning">
+                                    <span class="tf-icons bx bx-group"></span>
+                                </button>
                             </td>
                         </tr>
                     </tbody>

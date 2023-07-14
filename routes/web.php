@@ -64,7 +64,7 @@ Route::prefix('/painel')->name('painel.')->group(function () {
 
             Route::get('/cliente', function () {
                 return view('painel.administrador.gestao.clientes.informacoes');
-            });
+            })->name('gestao-cliente');
             Route::get('/administradores', [PainelController::class, "gestaoAdministradores"])->name('gestao-admins');
 
             Route::get('/gratuidades', [PainelController::class, "gestaoGratuidades"])->name('gestao-gratuidades');

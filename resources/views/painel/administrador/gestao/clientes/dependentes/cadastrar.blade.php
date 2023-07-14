@@ -47,10 +47,8 @@
                                     </div>
                                     <div class="col-md-5">
                                         <label class="form-label" for="email">Email</label>
-                                        <div class="input-group">
-                                            <input class="form-control" type="text" id="email" name="email" placeholder="example@com.br" required />
-                                            <div class="invalid-feedback">Digite um email válido.</div>
-                                        </div>
+                                        <input class="form-control" type="text" id="email" name="email" placeholder="example@com.br" required />
+                                        <div class="invalid-feedback">Digite um email válido.</div>
                                     </div>
 
                                     <div class="col-md-4">
@@ -58,17 +56,18 @@
                                         <div class="input-group">
                                             <span class="input-group-text">BR (+55)</span>
                                             <input type="text" id="telefone" name="telefone" type="text" class="form-control" placeholder="(11) 98765-4321" />
-                                            <div class="invalid-feedback">Digite um email válido.</div>
+                                            <div class="invalid-feedback">Digite um número de telefone válido.</div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label" for="cep">CEP</label>
-                                        <input type="text" id="cep" class="form-control" name="cep" placeholder="72318-552" required />
-                                        <div class="invalid-feedback">Digite um email válido.</div>
+                                        <input type="text" id="cep" class="form-control" name="cep" minlength="8" placeholder="72318-552" required />
+                                        <div class="invalid-feedback">Digite um CEP válido.</div>
+                                        <small id="invalid-cep" style="color: red;"></small>
                                     </div>
                                     <div class="col-md">
-                                        <label class="form-label" for="state">Estado</label>
-                                        <select id="state" class="select2 form-select" name="uf" data-allow-clear="true">
+                                        <label class="form-label" for="estado">Estado</label>
+                                        <select id="estado" class="select2 form-select" name="uf" data-allow-clear="true">
                                             <option value="">Selecione</option>
                                             <option value="AC">Acre</option>
                                             <option value="AL">Alagoas</option>
@@ -101,20 +100,20 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="form-label" for="landmark">Cidade</label>
-                                        <input type="text" id="landmark" class="form-control" name="cidade" />
+                                        <label class="form-label" for="cidade">Cidade</label>
+                                        <input type="text" id="cidade" class="form-control" name="cidade" />
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="form-label" for="city">Bairro</label>
-                                        <input type="text" id="city" class="form-control" name="bairro" />
+                                        <label class="form-label" for="bairro">Bairro</label>
+                                        <input type="text" id="bairoo" class="form-control" name="bairro" />
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="form-label" for="city">Rua</label>
-                                        <input type="text" id="city" class="form-control" name="rua" />
+                                        <label class="form-label" for="rua">Rua</label>
+                                        <input type="text" id="rua" class="form-control" name="rua" />
                                     </div>
                                     <div class="col-md">
-                                        <label class="form-label" for="city">Número</label>
-                                        <input type="number" id="city" class="form-control" name="numero" placeholder="(Opcional)" />
+                                        <label class="form-label" for="numero">Número</label>
+                                        <input type="number" id="numero" class="form-control" name="numero" placeholder="(Opcional)" />
                                     </div>
 
                                 </div>
