@@ -29,19 +29,30 @@ class OnboardRepository
 
     public function criarCliente($data)
     {
-       if(!$this->userController->getUser(null, $data['cpf_cnpj'], null))
-       {
         $user = $this->userController->store(
             $data['name'],
-             $data['email'],
-             $data['senha'],
-             $data['cpf_cnpj'],
-            'Cliente', 1, $data['client_identify']);
+            $data['email'],
+            $data['senha'],
+            $data['cpf_cnpj'],
+            'Cliente',
+            1,
+            $data['client_identify']
+        );
 
-            return $user;
-       }
+        $cliente = $this->clienteController->store(
+            $user->id,
+            $data['client_identify'],
+            $data['name'],
+            $user->cpf_cnpj,
+            $user->email,
+            $data['data_nascimento'],
+            $data['sexo'],
+            'active'
+        );
 
+        dd($cliente);
 
+        return $cliente;
     }
 
     public function getOnboards($data)

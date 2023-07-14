@@ -73,9 +73,12 @@ class UserController extends Controller
 
             if(!empty($data))
             {
-                $user = $this->userRepository->getUser($data);
+                if($user = $this->userRepository->getUser($data))
+                {
+                    return $user;
+                }
 
-                return $user;
+                return false;
             }
         } catch (\Throwable $th) {
 

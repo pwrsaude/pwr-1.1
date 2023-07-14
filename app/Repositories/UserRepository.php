@@ -80,6 +80,7 @@ class UserRepository
             }
         });
 
+
         return $user->get();
     }
 }

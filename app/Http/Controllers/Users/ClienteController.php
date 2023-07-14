@@ -46,7 +46,7 @@ class ClienteController extends Controller
 
 
             throw new Exception(
-                "Não foi possível  realizar essa ação: {$th->getMessage()}",
+                "Não foi possível cadastrar um novo cliente: {$th->getMessage()}",
                 500
             );
         }
