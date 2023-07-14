@@ -70,19 +70,48 @@
 
                     <h3 class="mb-2"><a href="/finalizar-cadastro" style="color: black;"><i class="fa-solid fa-arrow-left"></i></a> Concluir Assinatura</h3>
 
-                    <form id="formFinalizar" action="{{ route('onboarding.search.pageFinalizarOnboard') }}" method="POST">
+                    @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (session('danger'))
+                            <div class="alert alert-danger">
+                                {{ session('danger') }}
+                            </div>
+                        @endif
+
+                    <form id="formFinalizar" action="{{ route('onboarding.register.criar.cliente') }}" method="POST">
                         @csrf
                         <p class="fw-bold mb-2">Dados do Titular da Assinatura</p>
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="cpf_cnpj">CPF do Titular da Assinatura</label>
                             <div class="input-group">
-                                <input type="text" id="cpf_cnpj" name="cpf_cnpj" class="form-control" value="{{ $onboard['cpf_cliente'] }}" placeholder="" />
+                                <input
+                                type="text"
+                                id="cpf_cnpj"
+                                name="cpf_cnpj"
+                                 class="form-control"
+                                 value="{{ $onboard['cpf_cliente'] }}"
+                                 placeholder="Apenas números"
+                                 />
                             </div>
                         </div>
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="nomeCompleto">Nome Completo</label>
                             <div class="input-group">
-                                <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-control" placeholder="" />
+                                <input
+                                type="text"
+                                id="nomeCompleto"
+                                name="name"
+                                class="form-control"
+                                placeholder=""
+                                value="{{ old('name') }}"
+                                />
                             </div>
                         </div>
 
@@ -91,11 +120,18 @@
 
                             <div class="input-group">
                                 <select id="sexo" class="form-select " id="sexo" name="sexo">
-                                    <option selected>Selecione uma opção</option>
+                                    <option value="{{ old('sexo') }}" selected>Selecione uma opção</option>
                                     <option value="F">Feminino</option>
                                     <option value="M">Masculino</option>
                                 </select>
-                                <input type="date" class="form-control" id="dataN" name="dataN" value="" placeholder="" />
+                                <input
+                                type="date"
+                                class="form-control"
+                                id="dataN"
+                                name="data_nascimento"
+                                value=""
+                                placeholder=""
+                                />
                             </div>
                         </div>
 
@@ -104,24 +140,46 @@
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="email">Email</label>
                             <div class="input-group input-group-merge">
-                                <input value="{{ $onboard['email'] }}" type="text" id="email" name="email" class="form-control" placeholder="example@com.br" aria-describedby="creditCardMask2" />
+                                <input value="{{ $onboard['email'] }}"
+                                type="text"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="example@com.br"
+                                aria-describedby="creditCardMask2"
+                                />
                             </div>
                         </div>
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-4">
                             <label class="form-label" for="numeroTelefone">Número de Telefone</label>
                             <div class="input-group">
                                 <span class="input-group-text">BR (+55)</span>
-                                <input value="{{ $onboard['telefone'] }}" type="text" id="numeroTelefone" class="form-control" name="numeroTelefone" placeholder="(11) 99876-5431" />
+                                <input value="{{ $onboard['telefone'] }}"
+                                type="text"
+                                id="numeroTelefone"
+                                class="form-control"
+                                name="telefone"
+                                 placeholder="(11) 99876-5431" />
                             </div>
                         </div>
                         <div class="row g-3 mb-4">
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="senha">Senha</label>
-                                <input type="password" class="form-control" id="senha" name="senha" value="" placeholder="" />
+                                <input type="password"
+                                class="form-control"
+                                id="senha"
+                                name="senha"
+                                value=""
+                                placeholder="" />
                             </div>
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="confirm_senha">Confimação de Senha</label>
-                                <input type="password" id="confirm_senha" class="form-control" name="confirm_senha" value="" placeholder="" />
+                                <input type="password"
+                                id="confirm_senha"
+                                class="form-control"
+                                name="confirm_senha"
+                                value=""
+                                placeholder="" />
                             </div>
                         </div>
 
@@ -130,7 +188,14 @@
                         <div class="row g-3 mb-4">
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="cep">CEP</label>
-                                <input type="text" id="cep" class="form-control" name="cep" placeholder="72318-552" minlength="8" required />
+                                <input type="text"
+                                id="cep"
+                                class="form-control"
+                                name="cep"
+                                value="{{ old('cep') }}"
+                                placeholder="72318-552"
+                                minlength="8"
+                                required />
                                 <div class="invalid-feedback">Digite um CEP válido.</div>
                                 <small id="invalid-cep" style="color: red;"></small>
                             </div>
@@ -169,23 +234,44 @@
                             </div>
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="cidade">Cidade</label>
-                                <input type="text" id="cidade" class="form-control" name="cidade" />
+                                <input
+                                type="text"
+                                id="cidade"
+                                class="form-control"
+                                name="cidade" />
                             </div>
                             <div class="col-md-6 mb-0">
                                 <label class="form-label" for="bairro">Bairro</label>
-                                <input type="text" id="bairro" class="form-control" name="bairro" />
+                                <input
+                                type="text"
+                                id="bairro"
+                                class="form-control"
+                                name="bairro"
+                                />
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="rua">Rua</label>
-                                <input type="text" id="rua" class="form-control" name="rua" />
+                                <input
+                                type="text"
+                                id="rua"
+                                class="form-control"
+                                name="rua"
+                                />
                             </div>
                             <input type="hidden" name="client_identify" value="{{ $onboard['client_identify']  }}">
                             <div class="col-md">
                                 <label class="form-label" for="numero">Número</label>
-                                <input type="number" id="numero" class="form-control" name="numero" placeholder="(Opcional)" />
+                                <input
+                                type="number"
+                                id="numero"
+                                class="form-control"
+                                name="numero"
+                                placeholder="(Opcional)"
+                                value="{{ old('numero') }}"
+                                />
                             </div>
                         </div>
-                        <button type="submit" onclick="validarSenha()" class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
+                        <button type="submit"  class="btn btn-primary d-grid w-100">Finalizar Assinatura</button>
                     </form>
 
                     <div class="divider my-4">

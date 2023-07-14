@@ -46,4 +46,32 @@ class AssinaturaController extends Controller
             );
         }
     }
+
+    public function storeTableSubscriptions($user_id, $name, $stripe_id, $stripe_status, $quantity)
+    {
+        try {
+            $data = [
+                'user_id' => $user_id,
+                'name' => $name,
+                'stripe_id' => $stripe_id,
+                'stripe_status' => $stripe_status,
+                'quantity' => $quantity
+            ];
+
+            if(!empty($data))
+            {
+                $assinatura = $this->assinaturaRepository->storeTableSubscriptions($data);
+                return $assinatura;
+            }
+
+
+        } catch (\Throwable $th) {
+
+
+            throw new Exception(
+                "Não foi possível  gerar um registro assinatura: {$th->getMessage()}",
+                500
+            );
+        }
+    }
 }

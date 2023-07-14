@@ -70,7 +70,7 @@
 
                     <h3 class="mb-2"><a href="/finalizar-cadastro" style="color: black;"><i class="fa-solid fa-arrow-left"></i></a> Concluir Assinatura</h3>
                     <p class="fw-bold mb-3">Informe o CPF do titular infomado na compra</p>
-                    <form id="formFinalizar" action="{{ route('onboarding.seach.pageFinalizarOnboard') }}" method="POST">
+                    <form id="formFinalizar" action="{{ route('onboarding.search.pageRedirecionarOnboard') }}" method="POST">
                         @csrf
                         <div class="col-xl-12 col-md-6 col-sm-12 mb-2">
                             <label class="form-label" for="cpf_cnpj">CPF ou CNPJ</label>

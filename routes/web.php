@@ -21,8 +21,10 @@ Route::get('/recuperar', function () {
  * rota checkout
  */
 Route::prefix('/onboarding')->group(function(){
-    Route::get('/search', [OnboardController::class, 'pageVerificarCpfOnboard'])->name('onboarding.search.pageVerificarCpfOnboard');
-    Route::post('/search', [OnboardController::class, 'pageFinalizarOnboard'])->name('onboarding.search.pageFinalizarOnboard');
+    Route::get('/', [OnboardController::class, 'pageVerificarCpfOnboard'])->name('onboarding.search.pageVerificarCpfOnboard');
+    Route::post('/search', [OnboardController::class, 'pageRedirecionarOnboard'])->name('onboarding.search.pageRedirecionarOnboard');
+    Route::get('/form/finish/{id}', [OnboardController::class, 'pageFinalizarOnboard'])->name('onboarding.search.pageFinalizarOnboard');
+    Route::post('/register', [OnboardController::class, 'criarCliente'])->name('onboarding.register.criar.cliente');
 });
 
 Route::prefix('/cliente')->name('cliente.')->group(function () {

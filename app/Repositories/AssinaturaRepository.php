@@ -31,7 +31,7 @@ class AssinaturaRepository
             'name' => $data['name'],
             'stripe_id' => $data['stripe_id'],
             'stripe_status' => $data['status'],
-            'stripe' => $data['quantity'],
+            'quantity' => $data['quantity'],
             'trial_ends_at' => null,
             'ends_at' => null
         ];

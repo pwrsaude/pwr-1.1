@@ -65,26 +65,11 @@ class UserController extends Controller
     {
         try {
 
-            if(!is_null($user_id))
-            {
-                $data = [
-                    'user_id' => $user_id
-                ];
-            }
-
-            if(!is_null($cpf_cnpj))
-            {
-                $data = [
-                    'cpf_cnpj' => $cpf_cnpj
-                ];
-            }
-
-            if(!is_null($email))
-            {
-                $data = [
-                    'email' => $email
-                ];
-            }
+            $data = [
+                'user_id' => $user_id,
+                'cpf_cnpj' => $cpf_cnpj,
+                'email' => $email
+            ];
 
             if(!empty($data))
             {

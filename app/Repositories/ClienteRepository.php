@@ -35,7 +35,8 @@ class ClienteRepository
                 'email' => $data['email'],
                 'data_nascimento' => $data['data_nascimento'],
                 'sexo' => $data['sexo'],
-                'status' => 'ativo'
+                'status' => 'ativo',
+                'stripe_id' => $data['stripe_id']
             ];
 
             $cliente = $this->modelCliente->query()->create($newCliente);

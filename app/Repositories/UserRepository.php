@@ -29,7 +29,6 @@ class UserRepository
 
     private function getPermissaoRepository()
     {
-
     }
 
     private function getModelUser()
@@ -60,8 +59,7 @@ class UserRepository
 
         ];
 
-        if($user = $this->modelUser->create($newUser))
-        {
+        if ($user = $this->modelUser->create($newUser)) {
             // if(!is_null($data['nome_perfil']))
             // {
             //     $user->Perfis()->attach($this->perfilController->getPerfilByName($data['nome_perfil'])->perfil_id);
@@ -73,17 +71,15 @@ class UserRepository
 
     public function getUser($data)
     {
-        $user = $this->modelUser->query();
 
-        if(isset($data['user_id']))
-        {
-            $user->where('id', $data['user_id']);
-        }
+        $user = $this->modelUser->query()->where(function ($query) use ($data) {
+            if (!empty($data)) {
+                $query->where('id', $data['user_id']);
+                $query->orWhere('cpf_cnpj', $data['cpf_cnpj']);
+                $query->orWhere('email', $data['email']);
+            }
+        });
 
-        if(isset($data['cpf_cnpj']))
-        {
-            $user->where('cpf_cnpj', $data['cpf_cnpj']);
-        }
         return $user->get();
     }
 }

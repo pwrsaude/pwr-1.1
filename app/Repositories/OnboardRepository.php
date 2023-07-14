@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Controllers\Assinatura\AssinaturaController;
 use App\Http\Controllers\Users\ClienteController;
 use App\Http\Controllers\Users\UserController;
 use App\Models\Onboard;
@@ -11,12 +12,14 @@ class OnboardRepository
     private $modelOnboard;
     private $userController;
     private $clienteController;
+    private $assinaturaController;
 
     public function __construct()
     {
         $this->modelOnboard = $this->getModelOnboard();
         $this->userController = new UserController;
         $this->clienteController = new ClienteController;
+        $this->assinaturaController = new AssinaturaController;
     }
 
     private function getModelOnboard()
@@ -26,33 +29,19 @@ class OnboardRepository
 
     public function criarCliente($data)
     {
-        $onboard = $this->getOnboards($data['cpf_cnpj']);
+       if(!$this->userController->getUser(null, $data['cpf_cnpj'], null))
+       {
+        $user = $this->userController->store(
+            $data['name'],
+             $data['email'],
+             $data['senha'],
+             $data['cpf_cnpj'],
+            'Cliente', 1, $data['client_identify']);
 
-        if (!$user = $this->userController->getUser(null, $data['cpf_cnpj'], null)) {
-            $user = $this->userController->store
-            (
-                $data['name'],
-                $data['email'],
-                $data['password'],
-                $data['cpf_cnpj'],
-                'Cliente',
-                1,
-                $onboard->stripe_id
-            );
+            return $user;
+       }
 
-            $cliente = $this->clienteController->store
-            (
-                $user->id,
-                $user->stripe_id,
-                $user->name,
-                $user->cpf_cnpj,
-                $user->email,
-                $data['data_nascimento'],
-                $data['sexo'],
-                'active'
-        );
 
-        }
     }
 
     public function getOnboards($data)
